@@ -1,11 +1,12 @@
 ﻿/**
  * Neo's World : [Reset CSS]
  * http://neo.s21.xrea.com/
- * http://neos21github.github.io/
  */
 
 
+
 /* ==================== Global ==================== */
+
 
 
 /* input など Form 部品は制御しない */
@@ -51,19 +52,17 @@ details, figcaption, figure {
 }
 
 
+
 /* ==================== Page Style ==================== */
+
 
 
 /* 常に縦スクロールバー表示 */
 html {
-    width:100%;
-    height:100%;
     overflow-y:scroll;
 }
 
 body {
-    width:100%;
-    height:100%;
     line-height:1;
     word-wrap:break-word;    /* 長い英単語も折り返す */
     font-family:"Verdana", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
@@ -71,20 +70,9 @@ body {
 }
 
 
-/* ==================== Reset ==================== */
-
-
-blockquote, q {
-    quotes:none;
-}
-
-blockquote::before, blockquote::after, q::before, q::after {
-    content:"";
-    content:none;
-}
-
 
 /* ==================== Default Styles ==================== */
+
 
 
 h1, h2, h3, h4, h5, h6, caption, th, dt, em, strong {
@@ -115,7 +103,24 @@ var, samp, kbd {
 }
 
 
+
+/* ==================== Quotes ==================== */
+
+
+
+blockquote, q {
+    quotes:none;
+}
+
+blockquote::before, blockquote::after, q::before, q::after {
+    content:"";
+    content:none;
+}
+
+
+
 /* ==================== Table ==================== */
+
 
 
 table {
@@ -133,7 +138,9 @@ caption, th {
 }
 
 
+
 /* ==================== Etc ==================== */
+
 
 
 hr {
