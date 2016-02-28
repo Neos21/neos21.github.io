@@ -9,6 +9,7 @@
 /* ============================== Global ============================== */
 
 
+
 body {
     color:#000000;
     background:#ffffff;
@@ -30,8 +31,41 @@ abbr[title]:hover::after {
     content:" (" attr(title) ") ";
 }
 
+h1 {
+    font-size:150%;
+}
+
+h2 {
+    font-size:130%;
+}
+
+h3 {
+    font-size:110%;
+}
+
+h4 {
+    font-size:105%;
+}
+
+dt,
+caption {
+    margin-bottom:5px;
+}
+
+dd,
+li {
+    margin-left:2em;
+}
+
+td,
+th {
+    padding:4px;
+}
+
+
 
 /* ============================== Header ============================== */
+
 
 
 #logo a {
@@ -56,7 +90,9 @@ abbr[title]:hover::after {
 }
 
 
+
 /* ============================== Main ============================== */
+
 
 
 #main {
@@ -65,41 +101,22 @@ abbr[title]:hover::after {
     margin:0 auto;
 }
 
-section > * {
+#main section > * {
     margin:1em 0;
 }
 
-section > *:first-child {
+#main > section > *:first-child {
     margin-top:0;
 }
 
-section > *:last-child {
+#main > section > *:last-child {
     margin-bottom:0;
 }
 
-h1 {
-    font-size:150%;
-}
-
-h2 {
-    font-size:130%;
-}
-
-h3 {
-    font-size:110%;
-}
-
-h4 {
-    font-size:105%;
-}
-
-section dd,
-section li {
-    margin-left:2em;
-}
 
 
 /* ============================== Fotter ============================== */
+
 
 
 #footer {
