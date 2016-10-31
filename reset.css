@@ -19,36 +19,36 @@ em, strong, del, ins, dfn, abbr, code, mark,
 iframe, form, fieldset, legend, label,
 details, summary, figure, figcaption, object, embed, audio, video, canvas,
 small, s, i, b, cite, time, var, samp, kbd, sub, sup {
-    margin:0;
-    padding:0;
-    border:0;
-    font-size:100%;
-    font-style:normal;
-    background:transparent;
-    text-decoration:none;
-    vertical-align:baseline;
+  margin:0;
+  padding:0;
+  border:0;
+  font-size:100%;
+  font-style:normal;
+  background:transparent;
+  text-decoration:none;
+  vertical-align:baseline;
 }
 
 a {
-    margin:0;
-    padding:0;
-    font-size:100%;
-    background:transparent;
-    vertical-align:baseline;
+  margin:0;
+  padding:0;
+  font-size:100%;
+  background:transparent;
+  vertical-align:baseline;
 }
 
 /* HTML5 の新要素をブロック要素として定義 */
 header, footer, nav, main, section, article, aside,
 details, figcaption, figure {
-    display:block;
+  display:block;
 }
 
 *, *::before, *::after {
-    -webkit-box-sizing:border-box;
-       -moz-box-sizing:border-box;
-        -ms-box-sizing:border-box;
-         -o-box-sizing:border-box;
-            box-sizing:border-box;
+  -webkit-box-sizing:border-box;
+     -moz-box-sizing:border-box;
+      -ms-box-sizing:border-box;
+       -o-box-sizing:border-box;
+          box-sizing:border-box;
 }
 
 
@@ -59,14 +59,14 @@ details, figcaption, figure {
 
 /* 常に縦スクロールバー表示 */
 html {
-    overflow-y:scroll;
+  overflow-y:scroll;
 }
 
 body {
-    line-height:1;
-    word-wrap:break-word;    /* 長い英単語も折り返す */
-    font-family:"Verdana", "游ゴシック", "YuGothic", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", "Meiryo", sans-serif;
-    font-weight:500;    /* Windows の 游ゴシック Light が細いため指定・ヒラギノ・メイリオの場合は normal と同様の表示 */
+  line-height:1;
+  word-wrap:break-word;  /* 長い英単語も折り返す */
+  font-family:Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-weight:500;  /* Windows の 游ゴシック Light が細いため指定・ヒラギノ・メイリオの場合は normal と同様の表示 */
 }
 
 
@@ -76,30 +76,30 @@ body {
 
 
 h1, h2, h3, h4, h5, h6, caption, th, dt, em, strong {
-    font-weight:bold;
+  font-weight:bold;
 }
 
 del {
-    text-decoration:line-through;
+  text-decoration:line-through;
 }
 
 ins {
-    text-decoration:underline;
+  text-decoration:underline;
 }
 
 mark {
-    background-color:#ffff00;
+  background-color:#ffff00;
 }
 
 /* IE で下線が付かない対策・Firefox だと text-decoration で下線が付くのは Global にて text-decoration:none; 指定済 */
 dfn, abbr {
-    border-bottom:1px dotted;
-    cursor:help;
+  border-bottom:1px dotted;
+  cursor:help;
 }
 
 pre, code,
 var, samp, kbd {
-    font-family:monospace;
+  font-family:monospace;
 }
 
 
@@ -109,12 +109,12 @@ var, samp, kbd {
 
 
 blockquote, q {
-    quotes:none;
+  quotes:none;
 }
 
 blockquote::before, blockquote::after, q::before, q::after {
-    content:"";
-    content:none;
+  content:"";
+  content:none;
 }
 
 
@@ -124,17 +124,17 @@ blockquote::before, blockquote::after, q::before, q::after {
 
 
 table {
-    border-collapse:collapse;
-    border-spacing:0;
+  border-collapse:collapse;
+  border-spacing:0;
 }
 
 td, th {
-    border:1px solid #cccccc;
-    empty-cells:show;
+  border:1px solid #cccccc;
+  empty-cells:show;
 }
 
 caption, th {
-    text-align:center;
+  text-align:center;
 }
 
 
@@ -144,21 +144,21 @@ caption, th {
 
 
 hr {
-    display:block;
-    height:1px;
-    border:0;
-    border-top:1px solid #cccccc;
-    margin:1em 0;
-    padding:0;
+  display:block;
+  height:1px;
+  border:0;
+  border-top:1px solid #cccccc;
+  margin:1em 0;
+  padding:0;
 }
 
 input, select {
-    vertical-align:middle;
+  vertical-align:middle;
 }
 
 /* 画像を縦に並べた時に余白が出ないようにする */
 img {
-    vertical-align:top;
-    font-size:0;
-    line-height:0;
+  vertical-align:top;
+  font-size:0;
+  line-height:0;
 }
