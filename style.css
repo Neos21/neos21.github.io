@@ -11,55 +11,55 @@
 
 
 body {
-    color:#000000;
-    background:#ffffff;
-    line-height:1.5;
+  color:#000000;
+  background:#ffffff;
+  line-height:1.5;
 }
 
 a {
-    color:#ff0099;
-    text-decoration:none;
+  color:#ff0099;
+  text-decoration:none;
 }
 
 a:hover {
-    color:#0099ff;
-    text-decoration:underline overline;
+  color:#0099ff;
+  text-decoration:underline overline;
 }
 
 dfn[title]:hover::after,
 abbr[title]:hover::after {
-    content:" (" attr(title) ") ";
+  content:" (" attr(title) ") ";
 }
 
 h1 {
-    font-size:150%;
+  font-size:150%;
 }
 
 h2 {
-    font-size:130%;
+  font-size:130%;
 }
 
 h3 {
-    font-size:110%;
+  font-size:110%;
 }
 
 h4 {
-    font-size:105%;
+  font-size:105%;
 }
 
 dt,
 caption {
-    margin-bottom:5px;
+  margin-bottom:5px;
 }
 
 dd,
 li {
-    margin-left:2em;
+  margin-left:2em;
 }
 
 td,
 th {
-    padding:4px;
+  padding:4px;
 }
 
 
@@ -69,24 +69,24 @@ th {
 
 
 #logo a {
-    display:block;
-    width:100%;
-    min-width:960px;
-    height:200px;
-    line-height:200px;
-    font-size:280%;
-    letter-spacing:4px;
-    color:#ffffff;
-    text-align:center;
-    text-decoration:none;
-    background:linear-gradient(to right, hsla(200, 100%, 45%, 0.9), hsla(160, 100%, 45%, 0.9));
-    background-color:#ffffff;
-    transition:0.2s;
+  display:block;
+  width:100%;
+  min-width:960px;
+  height:200px;
+  line-height:200px;
+  font-size:280%;
+  letter-spacing:4px;
+  color:#ffffff;
+  text-align:center;
+  text-decoration:none;
+  background:linear-gradient(to right, hsla(200, 100%, 45%, 0.9), hsla(160, 100%, 45%, 0.9));
+  background-color:#ffffff;
+  transition:0.2s;
 }
 
 #logo a:hover {
-    color:#dddddd;
-    background-color:#333333;
+  color:#dddddd;
+  background-color:#333333;
 }
 
 
@@ -96,21 +96,21 @@ th {
 
 
 #main {
-    width:960px;
-    padding:40px 20px;
-    margin:0 auto;
+  width:960px;
+  padding:40px 20px;
+  margin:0 auto;
 }
 
 #main section > * {
-    margin:1em 0;
+  margin:1em 0;
 }
 
 #main > section > *:first-child {
-    margin-top:0;
+  margin-top:0;
 }
 
 #main > section > *:last-child {
-    margin-bottom:0;
+  margin-bottom:0;
 }
 
 
@@ -120,8 +120,8 @@ th {
 
 
 #footer {
-    width:960px;
-    margin:0 auto;
-    text-align:center;
-    padding-bottom:40px;
+  width:960px;
+  margin:0 auto;
+  text-align:center;
+  padding-bottom:40px;
 }
