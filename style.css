@@ -101,11 +101,13 @@ th {
   margin:0 auto;
 }
 
-#main section > * {
+#main section > *,
+#main dd > * {
   margin:1em 0;
 }
 
-#main > section > *:first-child {
+#main > section > *:first-child,
+#main dd > *:first-child {
   margin-top:0;
 }
 
