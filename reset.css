@@ -65,7 +65,7 @@ html {
 body {
   line-height:1;
   word-wrap:break-word;  /* 長い英単語も折り返す */
-  font-family:Verdana, "游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
+  font-family:"游ゴシック", YuGothic, "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, sans-serif;
   font-weight:500;  /* Windows の 游ゴシック Light が細いため指定・ヒラギノ・メイリオの場合は normal と同様の表示 */
 }
 
