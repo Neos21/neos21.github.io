@@ -1,0 +1,463 @@
+/**
+ * Neo's GitHub Pages
+ * http://neos21github.github.io/
+ */
+
+
+/* Box Sizing ================================================== */
+
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+      -ms-box-sizing: border-box;
+       -o-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+
+/* Font Family ================================================== */
+
+/* Yu Gothic Medium For Windows */
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Medium");
+}
+
+@font-face {
+  font-family: "Yu Gothic M";
+  src: local("Yu Gothic Bold");
+  font-weight: bold;
+}
+
+/* Serif */
+body,
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button,
+select {
+  font-family: -apple-system, BlinkMacSystemFont, "游ゴシック体", YuGothic, "Yu Gothic M", "游ゴシック Medium", "Yu Gothic Medium", "ヒラギノ角ゴ ProN W3", "Hiragino Kaku Gothic ProN W3", HiraKakuProN-W3, "ヒラギノ角ゴ ProN", "Hiragino Kaku Gothic ProN", "ヒラギノ角ゴ Pro", "Hiragino Kaku Gothic Pro", "メイリオ", Meiryo, Osaka, "ＭＳ Ｐゴシック", "MS PGothic", sans-serif;
+}
+
+/* Monospace */
+pre,
+code,
+var,
+samp,
+kbd,
+input,
+textarea {
+  font-family: MeiryoKe_Gothic, "Ricty Diminished", "Osaka－等幅", "Osaka-等幅", Osaka-mono, "ＭＳ ゴシック", "MS Gothic", "Courier New", Courier, Monaco, Menlo, Consolas, "Lucida Console", monospace;
+}
+
+
+/* Page ================================================== */
+
+/* Always Show Scrollbar */
+html {
+  overflow-y: scroll;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  color: #000;
+      -ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+  word-break: break-all;
+  background-color: #fff;
+  cursor: default;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+
+/* Reset Elements ================================================== */
+
+/* HTML5 Block Elements */
+header,
+footer,
+main,
+section,
+nav,
+article,
+aside,
+summary,
+details,
+figure
+figcaption {
+  display: block;
+}
+
+
+/* Font ================================================== */
+
+/* Heading */
+h1 { font-size: 2em; }
+h2 { font-size: 1.7em; }
+h3 { font-size: 1.5em; }
+h4 { font-size: 1.2em; }
+
+h5,
+h6 {
+  font-size: 1em;
+}
+
+/* Bold Elements */
+caption,
+th,
+em,
+dt {
+  font-weight: bold;
+}
+
+/* Reset Italic Elements : Expect i & cite */
+dfn,
+em,
+var {
+  font-style: normal;
+}
+
+
+/* Margin Padding ================================================== */
+
+/* Margin Left */
+li,
+dd,
+blockquote,
+figure {
+  margin-left: 2em;
+}
+
+/* List */
+ul,
+ol,
+li {
+  padding-left: 0;
+}
+
+
+/* General Syles ================================================== */
+
+a {
+  color: #0a4;
+  outline: none;
+}
+
+a:hover {
+  color: #0c6;
+}
+
+/* Avoid Spacing */
+img {
+  vertical-align: top;
+  font-size: 0;
+  line-height: 0;
+}
+
+em,
+em * {
+  color: #090;
+}
+
+strong,
+strong * {
+  color: #f00;
+}
+
+/* Dashed Underline */
+dfn,
+abbr {
+  text-decoration: none;
+  border-bottom: 1px dashed #333;
+  cursor: help;
+}
+
+dfn[title]::after,
+abbr[title]::after {
+  content: " (" attr(title) ") ";
+}
+
+:not(pre) > code,
+:not(pre) > var,
+:not(pre) > samp,
+:not(pre) > kbd {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .1em .25em;
+  background-color: #eee;
+}
+
+pre {
+  overflow: auto;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .5em 1em;
+  background-color: #eee;
+}
+
+/* Quotes */
+blockquote {
+  margin-right: 0;
+  border: 1px solid #0da;
+  border-radius: 4px;
+  padding: .5em 1em;
+  background-color: #dfe;
+}
+
+q {
+  quotes: none;
+}
+
+q::before,
+q::after {
+  content: "\"";
+}
+
+/* Table */
+table {
+  border-collapse: collapse;
+}
+
+td,
+th {
+  border: 1px solid #0da;
+  padding: .25em .5em;
+}
+
+th {
+  background-color: #dfe;
+}
+
+hr {
+  border-width: 0;
+  border-bottom: 1px solid #0da;
+}
+
+/* Forms */
+fieldset {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+input,
+button,
+select,
+textarea {
+  outline: none;
+  vertical-align: top;
+}
+
+/* Form Input Expect Checkbox & Radio */
+input:not([type="checkbox"]),
+input:not([type="radio"]),
+button,
+select,
+textarea {
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  padding: .2em .5em;
+}
+
+/* Buttons */
+input[type="button"],
+input[type="reset"],
+input[type="submit"],
+button {
+  background-color: #eee;
+}
+
+input[type="button"]:hover,
+input[type="button"]:focus,
+input[type="reset"]:hover,
+input[type="reset"]:focus,
+input[type="submit"]:hover,
+input[type="submit"]:focus,
+button:hover,
+button:focus {
+  border-color: #bbb;
+  background-color: #ddd;
+}
+
+input[type="button"]:active,
+input[type="reset"]:active,
+input[type="submit"]:active,
+button:active {
+  border-color: #aaa;
+  background-color: #ccc;
+}
+
+input:hover,
+input:focus,
+select:hover,
+select:focus,
+textarea:hover,
+textarea:focus {
+  border-color: #0da;
+}
+
+
+/* Header ================================================== */
+
+#header #logo a {
+  display: block;
+  overflow: hidden;
+  padding: .3em;
+  color: #eee;
+  font-size: 1.75em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+  background-image: linear-gradient(to top, rgba(35, 41, 44, .9), rgba(35, 41, 44, .9));
+  background-color: #000;
+  transition: background-color .2s;
+}
+
+#header #logo a:hover {
+  color: #fff;
+  background-color: #333;
+}
+
+
+/* Main ================================================== */
+
+#main {
+  margin: 2em auto 3em;
+  padding: 0 1rem;
+  line-height: 1.5;
+}
+
+/* Margin */
+#main section {
+  margin-bottom: 2em;
+}
+
+#main h1 {
+  margin-top: 0;
+  margin-bottom: 1em;
+}
+
+#main h2,
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+  margin-top: 2em;
+  margin-bottom: 1em;
+}
+
+#main section > ul,
+#main section > ol,
+#main p,
+#main table,
+#main dl,
+#main pre,
+#main blockquote,
+#main hr,
+#main form,
+#main figure {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+
+#main > section > section section {
+  padding-left: 1.5em;
+}
+
+/* Heading */
+#main h1 {
+  padding-bottom: .1em;
+  border-bottom: 1px solid #ccc;
+}
+
+#main h2 {
+  border-radius: 0 4px 4px 0;
+  margin-left: -9999px;
+  padding: .5rem .75rem .5rem 9999px;
+  color: #fff;
+  background-image: linear-gradient(to bottom, rgba(34, 170, 136, .9), rgba(0, 153, 102, .9)); 
+  background-color: #fff;
+  transition: background-color .2s;
+}
+
+#main h2:hover {
+  background-color: #666;
+}
+
+#main h3,
+#main h4,
+#main h5,
+#main h6 {
+  margin-left: -1.5rem;
+  padding-left: .5rem;
+  border-left: 1rem solid #0da; 
+}
+
+#main h3 {
+  border-bottom: 1px solid #0da;
+}
+
+
+/* Footer ================================================== */
+
+#footer {
+  margin: 3em 1rem 0;
+  border-top: 1px solid #ccc;
+}
+
+#footer #copyright {
+  padding: 1.5em 0;
+  text-align: center;
+}
+
+#footer #copyright small {
+  font-size: 1em;
+}
+
+#footer #copyright small a {
+  text-decoration: none;
+}
+
+
+/* Responsive ================================================== */
+
+/* Base Size = Minimum Size */
+html {
+  font-size: 16px;
+}
+
+@media (min-width: 960px) {
+  /* Responsive Size */
+  body {
+    /*
+     * calc(XX + ((1vw - YY) * ZZ))
+     * - XX = Minimum Font Size Started In Rem = 1rem
+     * - XX = Minimum ViewPort Width / 100
+     * - YY = 100 * Font Size Difference / ViewPort Width Difference
+     * https://websemantics.uk/tools/responsive-font-calculator/
+     */
+    font-size: calc(1rem + ((1vw - 9.6px) * .9091));
+  }
+  
+  #main {
+    width: 70vw;
+    min-width: 940px;
+  }
+}
+
+/* Maximum Size */
+@media (min-width: 1400px) {
+  body {
+    font-size: 20px;
+  }
+  
+  #main {
+    min-width: auto;
+  }
+}
