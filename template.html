@@ -14,18 +14,144 @@
     <main id="main">
       <section>
         <h1>Template</h1>
-        <p>要素の確認。</p>
+        <p>HTML 要素の表示仕様を確認するためのテンプレート。1カラムレイアウトで、なるべくブラウザデフォルトスタイルを利用する方針でスタイルを決めた。</p>
         <section>
           <h2>Section 2</h2>
           <p>Section 2 Paragraph.</p>
+          <ul>
+            <li>List</li>
+          </ul>
+          <blockquote>
+            <p>Blockquote</p>
+          </blockquote>
           <section>
             <h3>Section 3</h3>
             <p>Section 3 Paragraph.</p>
+            <ul>
+              <li>List</li>
+            </ul>
+            <blockquote>
+              <p>Blockquote</p>
+            </blockquote>
             <section>
               <h4>Section 4</h4>
               <p>Section 4 Paragraph.</p>
+              <section>
+                <h5>Section 5</h5>
+                <p>Section 5 Paragrah.</p>
+                <section>
+                  <h6>Section 6</h6>
+                  <p>Section 6 Paragraph.</p>
+                </section>
+                <p>Section 5 Paragraph.</p>
+              </section>
+              <p>Section 4 Paragraph.</p>
             </section>
+            <p>Section 3 Paragraph.</p>
           </section>
+          <p>Section 2 Paragraph.</p>
+        </section>
+        <section>
+          <h2>Inline Elements</h2>
+          <p>
+            This is <a href="#">Anchor Text</a>.
+            This is <em>Emphasis Text</em>.
+            This is <strong>Strong Text</strong>.
+            This is <dfn title="Definition">Definition Text</dfn>.
+            This is <abbr title="Abbr">Abbr Text</abbr>.
+            This is <del>Deleted Text</del>.
+            This is <ins>Inserted Text</ins>.
+            This is <q>Quote Text</q>.
+            This is <small>Small Text</small>.
+          </p>
+          <p>
+            This is <sub>Sub Text</sub>.
+            This is <sup>Sup Text</sup>.
+          </p>
+          <p>
+            This is <b>Bold Text</b>.
+            This is <i>Italic Text</i>.
+            This is <u>Underline Text</u>.
+            This is <s>Strike Text</s>.
+            This is <mark>Marked Text</mark>.
+          </p>
+          <p>
+            This is <code>Code Text</code>.
+            This is <var>Variable Text</var>.
+            This is <samp>Sample Text</samp>.
+            This is <kbd>Keyboard Text</kbd>.
+          </p>
+          <p>
+            <progress>Progress (Alternative)</progress>
+            Progress
+          </p>
+          <p>
+            <figure>
+              <figcaption>Fig Caption</figcaption>
+              <p>Figure Paragraph</p>
+            </figure>
+          </p>
+        </section>
+        <section>
+          <h2>Block Elements</h2>
+          <pre>Pre</pre>
+          <pre><code>Pre Code</code></pre>
+          <blockquote>
+            <p>Blockquote</p>
+            <p><cite>Cite</cite></p>
+          </blockquote>
+          <table>
+            <caption>Table Caption</caption>
+            <thead>
+              <tr>
+                <th>Header 1</th>
+                <th>Header 2</th>
+                <th>Header 3</th>
+                <th>Header 4</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Body 1</td>
+                <td>Body 2</td>
+                <td>Body 3</td>
+                <td>Body 4</td>
+              </tr>
+              <tr>
+                <td>Body 1</td>
+                <td colspan="2">Colspan</td>
+                <td>Body 4</td>
+              </tr>
+              <tr>
+                <td>Body 1</td>
+                <td rowspan="2">Rowspan</td>
+                <td>Body 3</td>
+                <td>Body 4</td>
+              </tr>
+              <tr>
+                <td>Body 1</td>
+                <td>Body 3</td>
+                <td>Body 4</td>
+              </tr>
+              <tr>
+                <td>Body 1</td>
+                <td>Body 2</td>
+                <td>Body 3</td>
+                <td>Body 4</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <th>Footer 1</th>
+                <th>Footer 2</th>
+                <th>Footer 3</th>
+                <th>Footer 4</th>
+              </tr>
+            </tfoot>
+          </table>
+          <p>Horizontal Line</p>
+          <hr>
+          <p>Horizontal Line</p>
         </section>
         <section>
           <h2>List</h2>
@@ -92,10 +218,55 @@
             </dd>
           </dl>
         </section>
+        <section>
+          <h2>Form</h2>
+          <form>
+            <p>
+              <input type="text" value="Textbox">
+              <input type="password" value="Password">
+              <input type="button" value="Input Button">
+              <input type="reset" value="Input Reset">
+              <input type="submit" value="Input Submit">
+              <label><input type="checkbox" name="checkbox" value="1" checked>Checkbox 1</label>
+              <label><input type="checkbox" name="checkbox" value="2">Checkbox 2</label>
+              <label><input type="radio" name="radio" value="1" checked>Radio 1</label>
+              <label><input type="radio" name="radio" value="2">Radio 2</label>
+            </p>
+            <p>
+              <select>
+                <option>Option 1</option>
+                <option>Option 2</option>
+                <optgroup label="Option Group">
+                  <option>Group Option 1</option>
+                  <option>Group Option 2</option>
+                  <option>Group Option 3</option>
+                </optgroup>
+                <option>Option 3</option>
+              </select>
+              <textarea>Textarea</textarea>
+              Text Text
+            </p>
+            <fieldset>
+              <legend>Legend</legend>
+              <p>
+                <button type="button">Button</button>
+                <button type="reset">Button Reset</button>
+                <button type="submit">Button Submit</button>
+                Text Text
+              </p>
+            </fieldset>
+          </form>
+        </section>
+        <!--
+          audio
+          video
+          img
+          svg
+        -->
       </section>
     </main>
     <footer id="footer">
-      <div id="copyright"><small>Copyright &copy; 2016-2017 <a href="index.html">Neo's GitHub Pages</a>, All rights reserved.</small></div>
+      <div id="copyright"><small>Copyright &copy; 2016-2017 <a href="index.html">Neo</a>, All rights reserved.</small></div>
     </footer>
   </body>
 </html>
