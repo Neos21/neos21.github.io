@@ -1,0 +1,24 @@
+{
+  "name": "neos21github.github.io",
+  "version": "1.0.0",
+  "description": "Neo's GitHub Pages",
+  "private": true,
+  "scripts": {
+    "?css": "styles.scss をコンパイル・圧縮し styles.css を生成する (Live Reload)",
+    "css": "node-sass -w ./styles.scss -r -o ./ --output-style compressed"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Neos21GitHub/neos21github.github.io.git"
+  },
+  "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Neos21GitHub/neos21github.github.io/issues"
+  },
+  "homepage": "https://neos21github.github.io/",
+  "devDependencies": {
+    "@neos21/neos-normalize": "1.0.0",
+    "node-sass": "4.7.2"
+  }
+}

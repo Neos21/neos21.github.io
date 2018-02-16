@@ -1,0 +1,220 @@
+/*! Neo's GitHub Pages : Neo (@Neos21) https://neos21github.github.io/ */
+
+// Neo's Normalize
+@import './node_modules/@neos21/neos-normalize/neos-normalize';
+
+/*! Neo's GitHub Pages [Styles] : Neo (@Neos21) https://neos21github.github.io/ */
+
+
+/* ==================================================
+ * 変数定義
+ * ================================================== */
+
+// メディアクエリ用
+$breakpoint-xs:  575.98px;  // @media (max-width: $breakpoint-xs)
+$breakpoint-sm:  576px   ;  // @media (min-width: $breakpoint-sm)
+$breakpoint-md:  768px   ;  // @media (min-width: $breakpoint-md)
+$breakpoint-lg:  992px   ;  // @media (min-width: $breakpoint-lg)
+$breakpoint-xl: 1200px   ;  // @media (min-width: $breakpoint-xl)
+
+// テーマカラー
+$colour-white         : #f7fbff;
+$colour-black         : #000408;
+$colour-green         : #00ddaa;
+$colour-normalize-grey: #c7cbcf;
+
+
+/* ==================================================
+ * ミックスイン定義
+ * ================================================== */
+
+// レスポンシブルにボックス幅を変更する
+@mixin responsive-width() {
+  width: auto;
+  margin: 0 auto;
+  padding: 0 1rem;
+  
+  @media (min-width: $breakpoint-md) {
+    width: 70vw;
+    min-width: calc(#{$breakpoint-md} - 20px);
+  }
+  
+  @media (min-width: $breakpoint-xl) {
+    min-width: auto;
+  }
+}
+
+
+/* ==================================================
+ * 要素全般
+ * ================================================== */
+
+/* 
+ * レスポンシブルにフォントサイズを変更する
+ * 
+ * - calc(XX + ((1vw - YY) * ZZ))
+ *   - XX = 最小サイズを Rem で指定する
+ *          ex. 通常 1rem (= 16px) で良い
+ *   - YY = 拡大を始めるビューポート幅 / 100 (px)
+ *          ex. 768px から拡大するなら 7.68px
+ *   - ZZ = 100 * 可変させるフォントサイズの差 / 可変させるビューポート幅の差
+ *          ex. 100 * (20px - 16px) / (1200px - 768px) = 100 * 4px / 432px = 0.9259...
+ * - 参考 : https://websemantics.uk/tools/responsive-font-calculator/
+ */
+ :root {
+  // 最小サイズ (基準)
+  font-size: 16px;
+  // 可変
+  @media (min-width: $breakpoint-md) {
+    font-size: calc(1rem + ((1vw - 7.68px) * .9259));
+  }
+  // 最大サイズ
+  @media (min-width: $breakpoint-xl) {
+    font-size: 20px;
+  }
+}
+
+body {
+  color: $colour-black;
+  background-color: $colour-white;
+  
+  // 幅が狭い場合は改行処理を追加する
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
+}
+
+a {
+  color: #0a4;
+  outline: none;
+  
+  &:hover {
+    color: #0c6;
+  }  
+}
+
+em,
+em * {
+  color: #090;
+}
+
+strong,
+strong * {
+  color: #f00;
+}
+
+blockquote,
+hr,
+td,
+th {
+  border-color: $colour-green;
+}
+
+blockquote,
+th {
+  background: #dfe;
+}
+
+
+/* ==================================================
+ * ヘッダ
+ * ================================================== */
+
+#header {
+  margin-bottom: 2rem;
+  
+  #logo a {
+    display: block;
+    overflow: hidden;
+    padding: .3em;
+    color: #eee;
+    font-size: 1.75em;
+    text-align: center;
+    text-decoration: none;
+    white-space: nowrap;
+    background: linear-gradient(to top, rgba(35, 41, 44, .7), rgba(35, 41, 44, .7)),
+                $colour-black;
+    transition: background-color .2s;
+    
+    &:hover {
+      color: $colour-white;
+      background-color: #333;
+    }
+  }
+}
+
+
+/* ==================================================
+ * メイン
+ * ================================================== */
+
+ #main {
+  @include responsive-width();
+  
+  // Level 1
+  & > section {
+    margin-bottom: 4rem;
+    
+    // Level 2 以降 : 見出しの上に余白を開ける
+    section {
+      margin-top: 2rem;
+    }
+    
+    // Level 3 以降
+    & > section section {
+      padding-left: 1.5rem;
+    }
+  }
+}
+
+h1 {
+  padding-bottom: .1em;
+  border-bottom: 1px solid $colour-normalize-grey;
+}
+
+h2 {
+  margin-left: -9999px;
+  border-radius: 0 4px 4px 0;
+  padding: .2em .2em .1em 9999px;
+  color: $colour-white;
+  background: linear-gradient(to bottom, rgba(34, 170, 136, .9), rgba(0, 153, 102, .9)),
+              $colour-white;
+  transition: background-color .2s;
+  
+  &:hover {
+    background-color: #666;
+  }
+}
+
+h3,
+h4,
+h5,
+h6 {
+  margin-left: -1.5rem;
+  padding-left: .5rem;
+  border-left: 1rem solid $colour-green; 
+}
+
+h3 {
+  border-bottom: 1px solid $colour-green;
+}
+
+
+/* ==================================================
+ * フッタ
+ * ================================================== */
+
+#footer {
+  margin: 3rem 1rem 0;
+  border-top: 1px solid $colour-normalize-grey;
+  padding: 2rem 0;
+  text-align: center;
+  
+  #copyright small {
+    font-size: 1rem;
+    
+    a {
+      text-decoration: none;
+    }
+  }
+}
