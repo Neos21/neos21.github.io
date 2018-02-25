@@ -21,7 +21,8 @@ $breakpoint-xl: 1200px   ;  // @media (min-width: $breakpoint-xl)
 $colour-white         : #f7fbff;
 $colour-black         : #000408;
 $colour-green         : #00ddaa;
-$colour-normalize-grey: #c7cbcf;
+$colour-green-lighten : #ddffee;
+$colour-normalize-grey: #d2d4d6;
 
 
 /* ==================================================
@@ -64,10 +65,12 @@ $colour-normalize-grey: #c7cbcf;
  :root {
   // 最小サイズ (基準)
   font-size: 16px;
+  
   // 可変
   @media (min-width: $breakpoint-md) {
     font-size: calc(1rem + ((1vw - 7.68px) * .9259));
   }
+  
   // 最大サイズ
   @media (min-width: $breakpoint-xl) {
     font-size: 20px;
@@ -76,12 +79,7 @@ $colour-normalize-grey: #c7cbcf;
 
 body {
   color: $colour-black;
-  background-color: $colour-white;
-  
-  // 幅が狭い場合は改行処理を追加する
-  @media (max-width: $breakpoint-xs) {
-    word-break: break-all;
-  }
+  background: $colour-white;
 }
 
 a {
@@ -90,7 +88,7 @@ a {
   
   &:hover {
     color: #0c6;
-  }  
+  }
 }
 
 em,
@@ -103,16 +101,14 @@ strong * {
   color: #f00;
 }
 
-blockquote,
 hr,
 td,
 th {
   border-color: $colour-green;
 }
 
-blockquote,
 th {
-  background: #dfe;
+  background: $colour-green-lighten;
 }
 
 
@@ -186,17 +182,17 @@ h2 {
   }
 }
 
+h3 {
+  border-bottom: 1px solid $colour-green;
+}
+
 h3,
 h4,
 h5,
 h6 {
   margin-left: -1.5rem;
   padding-left: .5rem;
-  border-left: 1rem solid $colour-green; 
-}
-
-h3 {
-  border-bottom: 1px solid $colour-green;
+  border-left: 1rem solid $colour-green;
 }
 
 
