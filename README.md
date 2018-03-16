@@ -1,6 +1,6 @@
-# neos21github.github.io
+# neos21.github.io
 
-__[Neo's GitHub Pages : https://neos21github.github.io/](https://neos21github.github.io/)__
+__[Neo's GitHub Pages : https://neos21.github.io/](https://neos21.github.io/)__
 
 
 ## Author
@@ -15,4 +15,4 @@ __[Neo's GitHub Pages : https://neos21github.github.io/](https://neos21github.gi
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
 - [Bit-Archer](http://bit-archer.hatenablog.com/)
-- [GitHub - Neos21GitHub](https://github.com/Neos21GitHub/)
+- [GitHub - Neos21](https://github.com/Neos21/)

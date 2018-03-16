@@ -1,5 +1,5 @@
 {
-  "name": "neos21github.github.io",
+  "name": "neos21.github.io",
   "version": "1.0.0",
   "description": "Neo's GitHub Pages",
   "private": true,
@@ -10,14 +10,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/Neos21GitHub/neos21github.github.io.git"
+    "url": "git+https://github.com/Neos21/neos21.github.io.git"
   },
   "author": "Neo <neos21@gmail.com> (http://neo.s21.xrea.com/)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Neos21GitHub/neos21github.github.io/issues"
+    "url": "https://github.com/Neos21/neos21.github.io/issues"
   },
-  "homepage": "https://neos21github.github.io/",
+  "homepage": "https://neos21.github.io/",
   "devDependencies": {
     "@neos21/neos-normalize": "1.0.2",
     "node-sass": "4.7.2"
