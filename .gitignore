@@ -2,3 +2,5 @@
 /WindowsBatchScripts
 
 node_modules
+
+*.log

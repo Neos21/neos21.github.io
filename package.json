@@ -4,7 +4,7 @@
   "description": "Neo's GitHub Pages",
   "private": true,
   "scripts": {
-    "?css": "styles.scss をコンパイル・圧縮し styles.css を生成する (Live Reload)",
+    "?css": "echo styles.scss をコンパイル・圧縮し styles.css を生成する (Live Reload)",
     "css": "npm run css-build && npm run css-build -- -w",
     "css-build": "node-sass ./styles.scss -r -o ./ --output-style compressed"
   },
@@ -19,7 +19,7 @@
   },
   "homepage": "https://neos21.github.io/",
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.2",
+    "@neos21/neos-normalize": "1.0.3",
     "node-sass": "4.7.2"
   }
 }
