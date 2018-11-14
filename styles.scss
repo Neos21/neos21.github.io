@@ -80,6 +80,10 @@ $colour-normalize-grey: #d2d4d6;
 body {
   color: $colour-black;
   background: $colour-white;
+  
+  @media (max-width: $breakpoint-xs) {
+    word-break: break-all;
+  }
 }
 
 a {
