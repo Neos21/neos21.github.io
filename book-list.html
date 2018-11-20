@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="ja">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>読んだ本リスト - Neo's GitHub Pages</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="icon" href="/favicon.ico">
+    <link rel="icon" href="/favicon-192x192.png" sizes="192x192" type="image/png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon-152x152.png" sizes="152x152">
+    <style>
+
+.book-item {
+  display: grid;
+  grid-template-columns: 6.5rem 100px 1fr;
+  grid-template-rows: auto;
+  grid-template-areas: 'buy-date meta title';
+  grid-column-gap: .5rem;
+  margin-bottom: 1rem;
+}
+
+.book-buy-date {
+  grid-area: buy-date;
+  color: #999;
+  font-size: .95rem;
+  white-space: nowrap;
+}
+
+.book-meta {
+  grid-area: meta;
+}
+  
+  .book-meta ul {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 'thumbnail thumbnail'
+                         'amazon    rakuten';
+    margin-bottom: 0;
+    list-style: none;
+  }
+  .book-meta ul li {
+    margin-left: 0;
+  }
+  .book-meta ul li:nth-of-type(1) {
+    grid-area: thumbnail;
+  }
+  .book-meta ul li:nth-of-type(1) a img {
+    width: 100px;
+    height: 100px; /* auto */
+    vertical-align: bottom;
+  }
+  .book-meta ul li:nth-of-type(2) {
+    grid-area: amazon;
+  }
+  .book-meta ul li:nth-of-type(3) {
+    grid-area: rakuten;
+  }
+  .book-meta ul li:nth-of-type(2) a,
+  .book-meta ul li:nth-of-type(3) a {
+    display: block;
+    border: 1px solid red;
+    text-align: center;
+  }
+
+.book-title {
+  grid-area: title;
+}
+
+@media (max-width: 575.98px) {
+  .book-item {
+    grid-template-columns: 100px 1fr;
+    grid-template-rows: auto 1fr;
+    grid-template-areas: 'meta buy-date'
+                         'meta title';
+    grid-column-gap: .5rem;
+  }
+}
+
+    </style>
+  </head>
+  <body id="neos21-github-io">
+    <header id="header">
+      <div id="logo"><a href="index.html">Neo's GitHub Pages</a></div>
+    </header>
+    <main id="main">
+      <section>
+        <h1>読んだ本リスト</h1>
+        <p>読んで良かったと思う本をリストアップ。今までに読んだ本を全網羅する気はない。漫画は省いている。技術書多め。日付は購入時期。</p>
+        
+        <section>
+          <h2>〜2011年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2002 頃</div>
+            <div class="book-title">詳解 HTML &amp; CSS &amp; JavaScript 辞典</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="book-item">
+            <div class="book-buy-date">2003 頃</div>
+            <div class="book-title">速習 Web デザイン Flash MX</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2003 頃</div>
+            <div class="book-title">速習 Web テクニック Flash MX 上級サンプル 100</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2003 頃</div>
+            <div class="book-title">ラッキーマン (マイケル・J・フォックス)</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2003 頃</div>
+            <div class="book-title">いつも上を向いて (マイケル・J・フォックス)</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2012年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2012 頃</div>
+            <div class="book-title">IT パスポート 2013年版 情報処理技術者試験学習書</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2013年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2013 頃</div>
+            <div class="book-title">オラクル認定資格教科書 Java プログラマ Bronze SE7</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2013 頃</div>
+            <div class="book-title">キタミ式イラスト IT 塾 基本情報技術者 平成26年度</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2013 頃</div>
+            <div class="book-title">速習！シンプルに文章を書く技術 2013</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2014年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2014 頃</div>
+            <div class="book-title">Tomcat ハンドブック 第2版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-09 頃</div>
+            <div class="book-title">SQL ポケットリファレンス 改訂版第3版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-09 頃</div>
+            <div class="book-title">SQL ハンドブック 機能引きガイド</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-09 頃</div>
+            <div class="book-title">Java : The Good Parts</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-09 頃</div>
+            <div class="book-title">Oracle SQL Plus デスクトップリファレンス</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">リーダブルコード</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">レガシーコード改善ガイド</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">新装版リファクタリング</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">プレファクタリング</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Eclipse クックブック</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">XML デスクトップリファレンス</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Ant 第2版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">軽快な Java</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Oracle PL/SQL デスクトップリファレンス 第2版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Oracle DBA チェックリストデスクトップリファレンス</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">プロとしての Oracle 物理設計入門 増補改訂版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">JavaScript 第6版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">プログラマが知るべき97のこと</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Jakarta Struts デスクトップリファレンス</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2014-11 頃</div>
+            <div class="book-title">Jakarta Struts クックブック</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2015年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2015 頃</div>
+            <div class="book-title">ダイアグラム別 UML 徹底活用 第2版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015 頃</div>
+            <div class="book-title">応用情報処理技術者 テキスト &amp; 問題集 2016年版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015 頃</div>
+            <div class="book-title">中の人 ネット界のトップスター26人の素顔</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015 頃</div>
+            <div class="book-title">Subversion ハンドブック</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015 頃</div>
+            <div class="book-title">Subversion 入門</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">あなたはまだそんな「仕様書」を書いているんですか？</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">プロとしての SQL チューニング入門</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">プロとしての Oracle 入門</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">プログラミング Jakarta Struts</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">Java による Extreme Programming クックブック</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">Ruby on Rails 4 アプリケーションプログラミング</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">パーフェクト Ruby on Rails</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">GitHub 実践入門</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2015-12 頃</div>
+            <div class="book-title">エンジニアのための時間管理術</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2016年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2016 頃</div>
+            <div class="book-title">BEA WebLogic Server 9.x/10 構築・運用ガイド</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          
+          <div class="book-item">
+            <div class="book-buy-date">2016 頃</div>
+            <div class="book-title">Head First ソフトウェア開発</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2016-07 頃</div>
+            <div class="book-title">思考は現実化する (単行本 上下巻)</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2016-07 頃</div>
+            <div class="book-title">人を動かす</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2016-07 頃</div>
+            <div class="book-title">7つの習慣</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2017年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2017 頃</div>
+            <div class="book-title">インタフェースデザインの心理学</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2017 頃</div>
+            <div class="book-title">Angular アプリケーションプログラミング</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2017 頃</div>
+            <div class="book-title">Jenkins 実践入門 第3版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2017-07 頃</div>
+            <div class="book-title">HTML5 プロフェッショナル認定試験レベル1 対策テキスト &amp; 問題集</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+        
+        <section>
+          <h2>2018年</h2>
+          <div class="book-item">
+            <div class="book-buy-date">2018 頃</div>
+            <div class="book-title">ジブリの仲間たち</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018 頃</div>
+            <div class="book-title">筋トレが最強のソリューションである</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018 頃</div>
+            <div class="book-title">達人プログラマ</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">グロースハッカー 第2版</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">自分を鍛える！：「知的トレーニング」生活の方法</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">プロカウンセラーの聞く技術</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">怒らない技術</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">怒らない技術2</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+          <div class="book-item">
+            <div class="book-buy-date">2018-01 頃</div>
+            <div class="book-title">Joel on Software</div>
+            <div class="book-meta">
+              <ul>
+                <li><a href="#"><img src=""></a></li>
+                <li><a href="#">尼</a></li>
+                <li><a href="#">楽</a></li>
+              </ul>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+    <footer id="footer">
+      <div id="copyright"><small>Copyright &copy; 2016-2018 <a href="index.html">Neo</a>, All rights reserved.</small></div>
+    </footer>
+  </body>
+</html>
