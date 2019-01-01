@@ -19,7 +19,7 @@
   },
   "homepage": "https://neos21.github.io/",
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.7",
+    "@neos21/neos-normalize": "1.0.9",
     "node-sass": "4.10.0"
   }
 }
