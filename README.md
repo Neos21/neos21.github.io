@@ -14,5 +14,4 @@ __[Neo's GitHub Pages : https://neos21.github.io/](https://neos21.github.io/)__
 - [Corredor](http://neos21.hatenablog.com/)
 - [Murga](http://neos21.hatenablog.jp/)
 - [El Mylar](http://neos21.hateblo.jp/)
-- [Bit-Archer](http://bit-archer.hatenablog.com/)
 - [GitHub - Neos21](https://github.com/Neos21/)
