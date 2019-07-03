@@ -32,8 +32,15 @@
         
         if(elementName === 'link' || elementName === 'script') {
           var clone = element.cloneNode(true);
-          element.parentNode.replaceChild(clone, element);
-          console.log(index, '入換', element, attribute);
+          if(attribute === '/scripts.js') {
+            // Neo's World の scripts.js を読み込むため
+            element.parentNode.appendChild(clone);
+            console.log(index, '追加', element, attribute);
+          }
+          else {
+            element.parentNode.replaceChild(clone, element);
+            console.log(index, '入替', element, attribute);
+          }
         }
       });
       console.log(elementName, attributeName, '置換処理終了');
