@@ -46,6 +46,9 @@
     console.log('処理完了');
   };
   
+  console.log('事前実行');
+  forNeosWorldGitHubPages();
+  
   // 読み込みタイミングに関わらず確実に実行されるよう制御する
   if(!document.readyState || document.readyState === 'interactive') {
     console.log('window.onload 予約');
@@ -54,9 +57,5 @@
   else if(document.readyState === 'loading') {
     console.log('DOMContentLoaded 予約');
     document.addEventListener('DOMContentLoaded', forNeosWorldGitHubPages);
-  }
-  else {
-    console.log('即実行');
-    forNeosWorldGitHubPages();
   }
 })();
