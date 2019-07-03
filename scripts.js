@@ -10,6 +10,13 @@
     }
     
     console.log('Neo\'s World GitHub Pages なので処理する');
+    
+    var xreaAdWrapper = document.getElementById('xrea');
+    if(xreaAdWrapper) {
+      xreaAdWrapper.innerHTML = '<a href="#"><img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7" alt="Replaced XREA AD"></a>';
+      console.log('XREA 広告コード置換');
+    }
+    
     var replaceAttribute = function(elementName, attributeName) {
       console.log(elementName, attributeName, '置換処理開始');
       Array.prototype.forEach.call(document.querySelectorAll(elementName), function(element, index) {
@@ -20,7 +27,7 @@
           return;
         }
         
-        element.setAttribute(attributeName, protocol + rootPath + attribute);
+        element.setAttribute(attributeName, rootPath + attribute);
         console.log(index, '置換', element, attribute);
         
         if(elementName === 'link' || elementName === 'script') {
@@ -31,11 +38,11 @@
       });
       console.log(elementName, attributeName, '置換処理終了');
     };
-    
     replaceAttribute('script', 'src');
     replaceAttribute('link', 'href');
     replaceAttribute('a', 'href');
     replaceAttribute('img', 'src');
+    
     console.log('処理完了');
   };
   
