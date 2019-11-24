@@ -1,6 +1,9 @@
-/dot-install-ruby
-/windows-batch-scripts
-
-node_modules
+.DS_Store
+Thumbs.db
 
 *.log
+
+node_modules/
+
+dot-install-ruby/
+windows-batch-scripts/
