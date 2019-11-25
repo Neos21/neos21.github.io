@@ -184,6 +184,10 @@ h2 {
   &:hover {
     background-color: #656667;
   }
+  
+  & a {
+    color: $colour-white;
+  }
 }
 
 h3 {
