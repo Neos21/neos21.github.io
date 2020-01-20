@@ -23,7 +23,7 @@
     "url": "https://github.com/sponsors/Neos21"
   },
   "devDependencies": {
-    "@neos21/neos-normalize": "1.0.13",
-    "node-sass": "4.10.0"
+    "@neos21/neos-normalize": "1.0.15",
+    "node-sass": "4.13.1"
   }
 }
