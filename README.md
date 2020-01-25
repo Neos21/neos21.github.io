@@ -5,7 +5,7 @@ __[Neo's GitHub Pages : https://neos21.github.io/](https://neos21.github.io/)__
 
 ## Author
 
-[Neo](http://neo.s21.xrea.com/) ([@Neos21](https://twitter.com/neos21))
+[Neo](http://neo.s21.xrea.com/)
 
 
 ## Links
