@@ -4,6 +4,3 @@ Thumbs.db
 *.log
 
 node_modules/
-
-dot-install-ruby/
-windows-batch-scripts/
