@@ -42,19 +42,19 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'ios-memo-icon-generator'       , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
     { name: 'perfect-yu-gothic'             , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
     { name: 'legacy-of-html'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
-    { name: 'compare-colour-contrast-ratio' , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'compare-colour-contrast-ratio' , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: '-'                },
     { name: 'garbler'                       , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
     { name: 'Neos21'                        , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'bookmarklets'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'bookmarklets'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: '-'                },
     { name: 'unix-like-commands-for-windows', branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'ngx-markdown-wiki'             , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
     { name: 'bootstrap3-glyphicons'         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: 'GH Latest' , description: 'Forked Project'   },
     { name: 'neos-normalize'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '◎'        , description: 'Neo\'s Normalize' },
-    { name: 'ccc'                           , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'ccc'                           , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: '-'                },
     { name: 'in-browser-sass'               , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
     { name: 'about'                         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Deprecated'       },
     { name: 'angular-utilities'             , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Angular'          },
-    { name: 'ios-safari-web-test'           , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'ios-safari-web-test'           , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: '-'                },
     { name: 'hatena-blogs'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: 'Hatena Blogs'     },
     { name: 'windows-batch-scripts'         , branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'practice-bootstrap3'           , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
@@ -109,7 +109,7 @@ document.addEventListener('DOMContentLoaded', () => {
           <tbody>
     `
     + gitHubPagesRepositories.map((repo) => {
-        const name                  = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const name                  = `<td>[<a href="${gitHubPagesUrlPrefix}${repo.name}">GHP</a>] <a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
         const branch                = `<td>${repo.branch}</td>`;
         const isUseGitHubPagesStyle = `<td>${repo.isUseGitHubPagesStyle ? '○' : '-'}</td>`;
         const useNormalize          = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
