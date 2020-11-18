@@ -44,12 +44,12 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'legacy-of-html'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
     { name: 'compare-colour-contrast-ratio' , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'garbler'                       , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
-    { name: 'Neos21'                        , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.0 CDN' , description: 'Vanilla'          },
+    { name: 'Neos21'                        , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
     { name: 'bookmarklets'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'unix-like-commands-for-windows', branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'ngx-markdown-wiki'             , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
     { name: 'bootstrap3-glyphicons'         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: 'GH Latest' , description: 'Forked Project'   },
-    { name: 'neos-normalize'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: true        , description: 'Neo\'s Normalize' },
+    { name: 'neos-normalize'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '◎'        , description: 'Neo\'s Normalize' },
     { name: 'ccc'                           , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'in-browser-sass'               , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
     { name: 'about'                         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Deprecated'       },
@@ -58,16 +58,16 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'hatena-blogs'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: 'Hatena Blogs'     },
     { name: 'windows-batch-scripts'         , branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
     { name: 'practice-bootstrap3'           , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
-    { name: 'neos21.github.io'              , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '2.0.0 CDN' , description: 'GitHub Pages'     }
+    { name: 'neos21.github.io'              , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '2.0.1 CDN' , description: 'GitHub Pages'     }
   ];
   
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
-    { name: 'remark-editor'      , service: 'Vercel', isUseNormalize: false, description: 'Vanilla'                               },
-    { name: 'affi-code-generator', service: 'Vercel', isUseNormalize: false, description: 'React'                                 },
-    { name: 'webrtc-video-chat'  , service: 'Glitch', isUseNormalize: false, description: 'Vanilla・Glitch 連携 Workflows を用意' },
-    { name: 'practice-vue'       , service: 'Vercel', isUseNormalize: false, description: 'Vue'                                   },
-    { name: 'neos-hatebu'        , service: 'Heroku', isUseNormalize: false, description: 'Angular'                               }
+    { name: 'remark-editor'      , service: 'Vercel', useNormalize: '2.0.1 CDN', description: 'Vanilla'                               },
+    { name: 'affi-code-generator', service: 'Vercel', useNormalize: false      , description: 'React'                                 },
+    { name: 'webrtc-video-chat'  , service: 'Glitch', useNormalize: false      , description: 'Vanilla・Glitch 連携 Workflows を用意' },
+    { name: 'practice-vue'       , service: 'Vercel', useNormalize: false      , description: 'Vue'                                   },
+    { name: 'neos-hatebu'        , service: 'Heroku', useNormalize: false      , description: 'Angular'                               }
   ];
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
@@ -111,7 +111,7 @@ document.addEventListener('DOMContentLoaded', () => {
     + gitHubPagesRepositories.map((repo) => {
         const name                  = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
         const branch                = `<td>${repo.branch}</td>`;
-        const isUseGitHubPagesStyle = `<td>${repo.isUseGitHubPagesStyle ? '○' : '×'}</td>`;
+        const isUseGitHubPagesStyle = `<td>${repo.isUseGitHubPagesStyle ? '○' : '-'}</td>`;
         const useNormalize          = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
         const description           = `<td>${repo.description}</td>`;
         return `<tr>${name}${branch}${isUseGitHubPagesStyle}${useNormalize}${description}</tr>`;
@@ -132,11 +132,11 @@ document.addEventListener('DOMContentLoaded', () => {
           <tbody>
     `
     + hostingOtherServiceRepositories.map((repo) => {
-        const name           = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
-        const service        = `<td>${repo.service}</td>`;
-        const isUseNormalize = `<td>${repo.isUseNormalize ? '○' : '×'}</td>`;
-        const description    = `<td>${repo.description}</td>`;
-        return `<tr>${name}${service}${isUseNormalize}${description}</tr>`;
+        const name         = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const service      = `<td>${repo.service}</td>`;
+        const useNormalize = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
+        const description  = `<td>${repo.description}</td>`;
+        return `<tr>${name}${service}${useNormalize}${description}</tr>`;
       }).join('')
     + tableFooter
   );
