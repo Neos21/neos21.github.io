@@ -6,16 +6,190 @@
     <title>Neo's GitHub Pages</title>
     <link rel="stylesheet" href="/styles.css">
     <link rel="icon" href="/favicon.ico">
-    <link rel="icon" href="/favicon-192x192.png" sizes="192x192" type="image/png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon-152x152.png" sizes="152x152">
+    <style>
+
+.table-wrapper {
+  overflow-x: auto;
+  margin: var(--nn-space-default) 0;
+}
+
+.table-wrapper > table {
+  width: 100%;
+  margin: 0;
+}
+
+.table-wrapper > table > thead > tr > th {
+  white-space: nowrap;
+}
+
+    </style>
+    <script>
+
+document.addEventListener('DOMContentLoaded', () => {
+  const repositoryUrlPrefix = 'https://github.com/Neos21/';
+  const gitHubPagesUrlPrefix = 'https://Neos21.github.io/';
+  
+  // GitHub Pages が存在するリポジトリ一覧
+  const gitHubPagesRepositories = [
+    { name: 'site-status'                   , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'README.md'        },
+    { name: 'practice-svelte'               , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Svelte'           },
+    { name: 'list-repos'                    , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vue'              },
+    { name: 'practice-opencvjs'             , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'birthdates'                    , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'nemui-gacha-js'                , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Vue'              },
+    { name: 'async-javascript-cheatsheet'   , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Forked Pages'     },
+    { name: 'web-camera-light-sensor'       , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'ios-memo-icon-generator'       , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'perfect-yu-gothic'             , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'legacy-of-html'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Vanilla'          },
+    { name: 'compare-colour-contrast-ratio' , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'garbler'                       , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'Neos21'                        , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: '2.0.0 CDN' , description: 'Vanilla'          },
+    { name: 'bookmarklets'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'unix-like-commands-for-windows', branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'ngx-markdown-wiki'             , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'bootstrap3-glyphicons'         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: 'GH Latest' , description: 'Forked Project'   },
+    { name: 'neos-normalize'                , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: true        , description: 'Neo\'s Normalize' },
+    { name: 'ccc'                           , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'in-browser-sass'               , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
+    { name: 'about'                         , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Deprecated'       },
+    { name: 'angular-utilities'             , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: false, useNormalize: false       , description: 'Angular'          },
+    { name: 'ios-safari-web-test'           , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'hatena-blogs'                  , branch: 'Workflows gh-pages', isUseGitHubPagesStyle: true , useNormalize: '○'        , description: 'Hatena Blogs'     },
+    { name: 'windows-batch-scripts'         , branch: 'master docs/'      , isUseGitHubPagesStyle: true , useNormalize: '○'        , description: '-'                },
+    { name: 'practice-bootstrap3'           , branch: 'master'            , isUseGitHubPagesStyle: false, useNormalize: false       , description: '-'                },
+    { name: 'neos21.github.io'              , branch: 'master'            , isUseGitHubPagesStyle: true , useNormalize: '2.0.0 CDN' , description: 'GitHub Pages'     }
+  ];
+  
+  // GitHub Pages 以外でホスティングしているリポジトリ一覧
+  const hostingOtherServiceRepositories = [
+    { name: 'remark-editor'      , service: 'Vercel', isUseNormalize: false, description: 'Vanilla'                               },
+    { name: 'affi-code-generator', service: 'Vercel', isUseNormalize: false, description: 'React'                                 },
+    { name: 'webrtc-video-chat'  , service: 'Glitch', isUseNormalize: false, description: 'Vanilla・Glitch 連携 Workflows を用意' },
+    { name: 'practice-vue'       , service: 'Vercel', isUseNormalize: false, description: 'Vue'                                   },
+    { name: 'neos-hatebu'        , service: 'Heroku', isUseNormalize: false, description: 'Angular'                               }
+  ];
+  
+  // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
+  const npmPackageRepositories = [
+    { name: 'rehype-prism'                 , isForked: false, hasGitHubPages: false },
+    { name: 'opu'                          , isForked: false, hasGitHubPages: false },
+    { name: 'node-calc-cli'                , isForked: false, hasGitHubPages: false },
+    { name: 'bookmarkletify'               , isForked: false, hasGitHubPages: false },
+    { name: 'igsv'                         , isForked: false, hasGitHubPages: false },
+    { name: 'twsv'                         , isForked: false, hasGitHubPages: false },
+    { name: 'just-tweet'                   , isForked: false, hasGitHubPages: false },
+    { name: 'compare-colour-contrast-ratio', isForked: false, hasGitHubPages: true  },
+    { name: 'neos-password-manager'        , isForked: false, hasGitHubPages: false },
+    { name: 'neos-npm-blog'                , isForked: false, hasGitHubPages: false },
+    { name: 'bootstrap3-glyphicons'        , isForked: true , hasGitHubPages: true  },
+    { name: 'neos-normalize'               , isForked: false, hasGitHubPages: true  },
+    { name: 'ccc'                          , isForked: false, hasGitHubPages: true  },
+    { name: 'req-cmd'                      , isForked: false, hasGitHubPages: false },
+    { name: 'in-browser-sass'              , isForked: false, hasGitHubPages: true  },
+    { name: 'gulp-template-html'           , isForked: true , hasGitHubPages: false },
+    { name: 'template-html'                , isForked: true , hasGitHubPages: false },
+    { name: 'npm-neos21'                   , isForked: false, hasGitHubPages: false },
+    { name: 'hatena-blogs'                 , isForked: false, hasGitHubPages: true  }
+  ];
+  
+  const tableFooter = '</tbody></table></div>';
+  
+  document.getElementById('github-pages-repositories').insertAdjacentHTML('beforeend',
+    `
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <th>Repository</th>
+            <th>Branch</th>
+            <th><dfn title="Use GitHub Pages Style">GHP</dfn></th>
+            <th><abbr title="Neo's Normalize">NN</abbr></th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+    `
+    + gitHubPagesRepositories.map((repo) => {
+        const name                  = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const branch                = `<td>${repo.branch}</td>`;
+        const isUseGitHubPagesStyle = `<td>${repo.isUseGitHubPagesStyle ? '○' : '×'}</td>`;
+        const useNormalize          = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
+        const description           = `<td>${repo.description}</td>`;
+        return `<tr>${name}${branch}${isUseGitHubPagesStyle}${useNormalize}${description}</tr>`;
+      }).join('')
+    + tableFooter
+  );
+  
+  document.getElementById('hosting-other-service-repositories').insertAdjacentHTML('beforeend',
+    `
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <th>Repository</th>
+            <th>Service</th>
+            <th><abbr title="Neo's Normalize">NN</abbr></th>
+            <th>Description</th>
+          </thead>
+          <tbody>
+    `
+    + hostingOtherServiceRepositories.map((repo) => {
+        const name           = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const service        = `<td>${repo.service}</td>`;
+        const isUseNormalize = `<td>${repo.isUseNormalize ? '○' : '×'}</td>`;
+        const description    = `<td>${repo.description}</td>`;
+        return `<tr>${name}${service}${isUseNormalize}${description}</tr>`;
+      }).join('')
+    + tableFooter
+  );
+  
+  document.getElementById('npm-package-repositories').insertAdjacentHTML('beforeend',
+    `
+      <div class="table-wrapper">
+        <table>
+          <thead>
+            <th>Repository</th>
+            <th>Forked</th>
+            <th><abbr title="GitHub Pages">GHP</abbr></th>
+          </thead>
+          <tbody>
+    `
+    + npmPackageRepositories.map((repo) => {
+        const name           = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const isForked       = `<td>${repo.isForked ? '○' : '-'}</td>`;
+        const hasGitHubPages = `<td>${repo.hasGitHubPages ? '<a href="' + gitHubPagesUrlPrefix + repo.name + '">○</a>' : '-'}</td>`;
+        return `<tr>${name}${isForked}${hasGitHubPages}</tr>`;
+      }).join('')
+    + tableFooter
+  );
+});
+
+    </script>
   </head>
   <body>
     <header><a href="/index.html">Neo's GitHub Pages</a></header>
     <main>
       <section>
         <h1>Neo's GitHub Pages</h1>
-        <p><a href="https://neos21.net/">Neo's World</a>、<a href="https://neos21.hatenablog.com/">Corredor</a> を運営する <em><a href="/Neos21/">Neo</a></em> の GitHub Pages。</p>
-        <section>
+        <p><a href="https://neos21.net/">Neo's World</a>、<a href="https://neos21.hatenablog.com/">Corredor</a> を運営する <strong><a href="/Neos21/">Neo</a></strong> の GitHub Pages。</p>
+        <section id="github-repositories">
+          <h2>GitHub Repositories</h2>
+          <p>Neo が作成した GitHub リポジトリ一覧は、<a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a>、拙作の <a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a> アプリからご覧ください。</p>
+        </section>
+        <section id="github-pages-repositories">
+          <h2>GitHub Pages Repositories</h2>
+          <p>GitHub Pages が存在するリポジトリ一覧。</p>
+          <!-- Insert Table From JS Here -->
+        </section>
+        <section id="hosting-other-service-repositories">
+          <h2></h2>
+          <p>GitHub Pages 以外でサイトをホスティングしているリポジトリ一覧。メインサイト <a href="https://neos21.net/">Neo's World</a> は除きます (メインサイトは XREA で運営中)。</p>
+          <!-- Insert Table From JS Here -->
+        </section>
+        <section id="npm-package-repositories">
+          <h2>npm Package Repositories</h2>
+          <p>npm パッケージを管理しているリポジトリ一覧。</p>
+          <!-- Insert Table From JS Here -->
+        </section>
+        <section id="single-pages">
           <h2>Single Pages</h2>
           <p><a href="https://github.com/Neos21/neos21.github.io">neos21.github.io</a> リポジトリで公開しているページ一覧。</p>
           <dl>
@@ -29,125 +203,10 @@
             </dd>
           </dl>
         </section>
-        <section>
-          <h2>GitHub Pages Repositories</h2>
-          <p>GitHub Pages を公開しているリポジトリ一覧。</p>
-          <dl>
-            <dt><a href="/site-status/">Site Status</a></dt>
-            <dd>
-              <p>自分が保持するドメイン・証明書の有効期限を確認するページ。</p>
-            </dd>
-            <dt><a href="/practice-svelte/">Practice Svelte</a></dt>
-            <dd>
-              <p>Svelte を使用したサンプルページ。</p>
-            </dd>
-            <dt><a href="https://neos21.github.io/list-repos/">List Repos</a></dt>
-            <dd>
-              <p>任意の GitHub ユーザのリポジトリ情報を一覧表示する。Vue 製。</p>
-            </dd>
-            <dt><a href="https://neos21.github.io/practice-opencvjs/">Practice OpenCV.js</a></dt>
-            <dd>
-              <p>OpenCV.js を使った顔認識 Web アプリのサンプル。</p>
-            </dd>
-            <dt><a href="/birthdates/">Birthdates</a></dt>
-            <dd>
-              <p>誕生日と経過日数を表示できる Web アプリ。Vanilla JS。</p>
-            </dd>
-            <dt><a href="/nemui-gacha-js/">Nemui Gacha</a></dt>
-            <dd>
-              <p>ねむいガチャ。React 製。kuromoji.js を使用して形態素解析を行い、任意の言葉の否定形を作る。</p>
-            </dd>
-            <dt>Fork : <a href="/async-javascript-cheatsheet/">asynchronous JS cheatsheet</a></dt>
-            <dd>
-              <p>async・await のチートシート。</p>
-            </dd>
-            <dt><a href="/web-camera-light-sensor/">Web Camera Light Sensor</a></dt>
-            <dd>
-              <p>スマホカメラや Web カメラを使用して部屋の明るさを計測し、一定時間明るかったら Slack 通知する Web アプリ。Vanilla JS。</p>
-            </dd>
-            <dt><a href="/ios-memo-icon-generator/">iOS Memo Icon Generator</a></dt>
-            <dd>
-              <p>iOS のホーム画面に設置できるメモ入りのアイコンを作成できる Web アプリ。Vanilla JS。</p>
-            </dd>
-            <dt><a href="/perfect-yu-gothic/">Perfect Yu Gothic</a><dt>
-            <dd>
-              <p>Windows 環境でかすれないキレイな游ゴシックを表示するための試験場。</p>
-            </dd>
-            <dt><a href="/legacy-of-html/">Legacy of HTML</a></dt>
-            <dd>
-              <p>昔を懐かしんで HTML を書きました。</p>
-            </dd>
-            <dt><a href="/compare-colour-contrast-ratio/">Compare Colour Contrast Ratio</a></dt>
-            <dd>
-              <p>2色の色情報からコントラスト比を導きます。</p>
-            </dd>
-            <dt><a href="/garbler/">Garbler</a></dt>
-            <dd>
-              <p>文字化けした文字列の復元を色々な組み合わせで試みます。Angular 製。</p>
-            </dd>
-            <dt><a href="/bookmarklets/">Bookmarklets</a></dt>
-            <dd>
-              <p>ブックマークレット集。</p>
-            </dd>
-            <dt><a href="/unix-like-commands-for-windows/">Unix-Like Commands For Windows</a></dt>
-            <dd>
-              <p>Windows で Unix ライク・Linux Bash 風・MacOS 的なコマンドを再現するためのまとめ。</p>
-            </dd>
-            <dt><a href="/wiki/">Neo's Wiki</a></dt>
-            <dd>
-              <p>自分なりの Tips をまとめる Wiki。</p>
-            </dd>
-            <dt><a href="/ngx-markdown-wiki/">ngx-markdown-wiki</a></dt>
-            <dd>
-              <p>Markdown ファイルを動的にパースして Wiki 風に閲覧できる Angular アプリ。</p>
-            </dd>
-            <dt><a href="/bootstrap3-glyphicons/">Bootstrap3 Glyphicons</a></dt>
-            <dd>
-              <p>Bootstrap v3.3.7 から Glyphicons 部分のみ抜き出したパッケージ。</p>
-            </dd>
-            <dt><a href="/neos-normalize/">Neo's Normalize</a></dt>
-            <dd>
-              <p>オレオレノーマライズ CSS。</p>
-            </dd>
-            <dt><a href="/ccc/">ccc</a></dt>
-            <dd>
-              <p>Colour Code Converter。</p>
-            </dd>
-            <dt><a href="/in-browser-sass/">in-browser-sass</a></dt>
-            <dd>
-              <p>ブラウザ上で SASS / SCSS コードをコンパイルし Web ページに適用するライブラリ。</p>
-            </dd>
-            <dt><a href="/angular-utilities/">Angular Utilities</a></dt>
-            <dd>
-              <p>Angular 製のユーティリティ集。</p>
-            </dd>
-            <dt><a href="/ios-safari-web-test/">iOS Safari Web Test</a></dt>
-            <dd>
-              <p>iOS Safari で使える HTML・CSS・JS を検証する。</p>
-            </dd>
-            <dt><a href="/hatena-blogs/">Hatena Blogs</a></dt>
-            <dd>
-              <p>自分が運営しているはてなブログのテーマやカスタム HTML などを保存しておく。</p>
-            </dd>
-            <dt><a href="/windows-batch-scripts/">Windows Batch Scripts</a></dt>
-            <dd>
-              <p>Windows で使用できるスクリプト言語たちの「あの処理はあの言語でどう書くの？」のまとめ。</p>
-            </dd>
-            <dt><a href="/practice-bootstrap3/">Practice Bootstrap3</a></dt>
-            <dd>
-              <p>Bootstrap3 の練習場。</p>
-            </dd>
-            <dt><a href="/dot-install-ruby/">Dot Install Ruby</a></dt>
-            <dd>
-              <p>Ruby の勉強リポジトリ。</p>
-            </dd>
-          </dl>
-        </section>
-        <section>
+        <section id="links">
           <h2>Links</h2>
           <ul>
             <li><a href="https://neos21.net/">Neo's World</a></li>
-            <li><a href="https://neos21.hatenablog.com/">Corredor</a></li>
             <li><a href="https://github.com/Neos21">GitHub - Neos21</a></li>
             <li><a href="https://github.com/Neos21/neos21.github.io">GitHub - Neos21 - neos21.github.io</a></li>
           </ul>

@@ -4,3 +4,10 @@ Thumbs.db
 *.log
 
 node_modules/
+
+bookmarklets/
+ccc/
+compare-colour-contrast-ratio/
+ios-safari-web-test/
+unix-like-commands-for-windows/
+windows-batch-scripts/
