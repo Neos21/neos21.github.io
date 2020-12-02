@@ -56,7 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // GitHub Pages が存在するリポジトリ一覧
   const gitHubPagesRepositories = [
-    { name: 'site-status'                  , branch: 'master'  , useNormalize: false       , description: 'README.md'        },
+    { name: 'site-status'                  , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'         },
     { name: 'practice-svelte'              , branch: 'gh-pages', useNormalize: false       , description: 'Svelte'           },
     { name: 'list-repos'                   , branch: 'gh-pages', useNormalize: false       , description: 'Vue'              },
     { name: 'practice-opencvjs'            , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
@@ -66,30 +66,30 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'ios-memo-icon-generator'      , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'poc-perfect-yu-gothic'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'legacy-of-html'               , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'compare-colour-contrast-ratio', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: '-'                },
+    { name: 'compare-colour-contrast-ratio', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
     { name: 'garbler'                      , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
     { name: 'Neos21'                       , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'bookmarklets'                 , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: '-'                },
+    { name: 'bookmarklets'                 , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
     { name: 'ngx-markdown-wiki'            , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
     { name: 'bootstrap3-glyphicons'        , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Forked Project'   },
     { name: 'neos-normalize'               , branch: 'master'  , useNormalize: '○'        , description: 'Neo\'s Normalize' },
-    { name: 'ccc'                          , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: '-'                },
-    { name: 'in-browser-sass'              , branch: 'gh-pages', useNormalize: false       , description: '-'                },
+    { name: 'ccc'                          , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
+    { name: 'in-browser-sass'              , branch: 'gh-pages', useNormalize: false       , description: 'npm Demo'         },
     { name: 'angular-utilities'            , branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
-    { name: 'poc-ios-safari-web'           , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: '-'                },
+    { name: 'poc-ios-safari-web'           , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
     { name: 'hatena-blogs'                 , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
-    { name: 'practice-bootstrap3'          , branch: 'master'  , useNormalize: false       , description: '-'                },
+    { name: 'practice-bootstrap3'          , branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
     { name: 'neos21.github.io'             , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'GitHub Pages'     }
   ];
   
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
-    { name: 'remark-editor'      , service: 'Vercel', useNormalize: '2.0.1 CDN', description: 'Vanilla'                   },
-    { name: 'affi-code-generator', service: 'Vercel', useNormalize: false      , description: 'React'                     },
-    { name: 'webrtc-video-chat'  , service: 'Glitch', useNormalize: false      , description: 'Vanilla・連携 Workflow 有' },
-    { name: 'practice-vue'       , service: 'Vercel', useNormalize: false      , description: 'Vue'                       },
-    { name: 'neos-hatebu'        , service: 'Heroku', useNormalize: false      , description: 'Angular'                   },
-    { name: 'neos21.net'         , service: 'XREA'  , useNormalize: '2.0.1 npm', description: 'Main Website'              }
+    { name: 'remark-editor'      , service: 'Vercel', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
+    { name: 'affi-code-generator', service: 'Vercel', useNormalize: false      , description: 'React'                  },
+    { name: 'webrtc-video-chat'  , service: 'Glitch', useNormalize: false      , description: 'Vanilla・連携 Workflow' },
+    { name: 'practice-vue'       , service: 'Vercel', useNormalize: false      , description: 'Vue'                    },
+    { name: 'neos-hatebu'        , service: 'Heroku', useNormalize: false      , description: 'Angular'                },
+    { name: 'neos21.net'         , service: 'XREA'  , useNormalize: '2.0.1 npm', description: 'Main Website'           }
   ];
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
@@ -192,7 +192,7 @@ document.addEventListener('DOMContentLoaded', () => {
         <p><a href="https://neos21.net/">Neo's World</a>、<a href="https://neos21.hatenablog.com/">Corredor</a> を運営する <strong><a href="https://neos21.github.io/Neos21/">Neo</a></strong> の GitHub Pages。</p>
         <section id="github-repositories">
           <h2>GitHub Repositories</h2>
-          <p>Neo が作成した GitHub リポジトリ一覧は、<a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a>、拙作の <a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a> アプリからご覧ください。</p>
+          <p>Neo が作成した GitHub リポジトリ一覧は、<a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a>、拙作の <em><a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a></em> アプリからご覧ください。</p>
         </section>
         <section id="github-pages-repositories">
           <h2>GitHub Pages Repositories</h2>
