@@ -1,8 +1,15 @@
 #!/bin/bash
 
 # GitHub Pages として公開しているリポジトリを取得・更新する
+# 
+# 以下の記述と揃える
+# - `.gitignore`
+# - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'calc-resume-years'
+  'practice-preact-on-github-pages'
+  'practice-riot'
   'site-status'
   'practice-svelte'
   'list-repos'

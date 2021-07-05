@@ -5,6 +5,12 @@ Thumbs.db
 
 node_modules/
 
+# 以下の記述と揃える
+# - `git-pull-sub-directories.sh`
+# - `index.html` : `const gitHubPagesRepositories`
+calc-resume-years/
+practice-preact-on-github-pages/
+practice-riot/
 site-status/
 practice-svelte/
 list-repos/

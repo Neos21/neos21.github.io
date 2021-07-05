@@ -3,16 +3,18 @@
   <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Google Search Console -->
-    <meta name="google-site-verification" content="ls7kuvIKSqVa_dcixqKvFwl393swvYMkHCkG-xtlCj0">
     <title>Neo's GitHub Pages</title>
     <link rel="icon" href="favicon.ico">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.0.1/neos-normalize.min.css">
+    
+    <!-- Google Search Console -->
+    <meta name="google-site-verification" content="ls7kuvIKSqVa_dcixqKvFwl393swvYMkHCkG-xtlCj0">
     <!-- Global Site Tag (gtag.js) - Google Analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-LP3ZQV2R3M"></script>
     <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-LP3ZQV2R3M');gtag('config','UA-106501-6');</script>
     <!-- Google AdSense -->
     <script data-ad-client="ca-pub-6475907504235292" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+    
     <style>
 
 body {
@@ -55,45 +57,55 @@ document.addEventListener('DOMContentLoaded', () => {
   const gitHubPagesUrlPrefix = 'https://Neos21.github.io/';
   
   // GitHub Pages が存在するリポジトリ一覧
+  // 
+  // 以下の記述と揃える
+  // - `.gitignore`
+  // - `git-pull-sub-directories.sh`
   const gitHubPagesRepositories = [
-    { name: 'site-status'                  , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'         },
-    { name: 'practice-svelte'              , branch: 'gh-pages', useNormalize: false       , description: 'Svelte'           },
-    { name: 'list-repos'                   , branch: 'gh-pages', useNormalize: false       , description: 'Vue'              },
-    { name: 'practice-opencvjs'            , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'birthdates'                   , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'nemui-gacha-js'               , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Vue'              },
-    { name: 'web-camera-light-sensor'      , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'ios-memo-icon-generator'      , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'poc-perfect-yu-gothic'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'legacy-of-html'               , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'compare-colour-contrast-ratio', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
-    { name: 'garbler'                      , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
-    { name: 'Neos21'                       , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'bookmarklets'                 , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'ngx-markdown-wiki'            , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
-    { name: 'bootstrap3-glyphicons'        , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Forked Project'   },
-    { name: 'neos-normalize'               , branch: 'master'  , useNormalize: '○'        , description: 'Neo\'s Normalize' },
-    { name: 'ccc'                          , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
-    { name: 'in-browser-sass'              , branch: 'gh-pages', useNormalize: false       , description: 'npm Demo'         },
-    { name: 'angular-utilities'            , branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
-    { name: 'poc-ios-safari-web'           , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'hatena-blogs'                 , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
-    { name: 'practice-bootstrap3'          , branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
-    { name: 'neos21.github.io'             , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'GitHub Pages'     }
+    { name: 'calc-resume-years'              , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'practice-preact-on-github-pages', branch: 'master'  , useNormalize: false       , description: 'Preact'           },
+    { name: 'practice-riot'                  , branch: 'master'  , useNormalize: false       , description: 'Riot'             },
+    { name: 'site-status'                    , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'practice-svelte'                , branch: 'gh-pages', useNormalize: false       , description: 'Svelte'           },
+    { name: 'list-repos'                     , branch: 'gh-pages', useNormalize: false       , description: 'Vue'              },
+    { name: 'practice-opencvjs'              , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'birthdates'                     , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'nemui-gacha-js'                 , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Vue'              },
+    { name: 'web-camera-light-sensor'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'ios-memo-icon-generator'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'poc-perfect-yu-gothic'          , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'legacy-of-html'                 , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'compare-colour-contrast-ratio'  , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
+    { name: 'garbler'                        , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'Neos21'                         , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'bookmarklets'                   , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'ngx-markdown-wiki'              , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'bootstrap3-glyphicons'          , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Forked Project'   },
+    { name: 'neos-normalize'                 , branch: 'master'  , useNormalize: '○'        , description: 'Neo\'s Normalize' },
+    { name: 'ccc'                            , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
+    { name: 'in-browser-sass'                , branch: 'gh-pages', useNormalize: false       , description: 'npm Demo'         },
+    { name: 'angular-utilities'              , branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
+    { name: 'poc-ios-safari-web'             , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'hatena-blogs'                   , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
+    { name: 'practice-bootstrap3'            , branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
+    { name: 'neos21.github.io'               , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'GitHub Pages'     }
   ];
   
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
-    { name: 'remark-editor'      , service: 'Vercel', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
-    { name: 'affi-code-generator', service: 'Vercel', useNormalize: false      , description: 'React'                  },
-    { name: 'webrtc-video-chat'  , service: 'Glitch', useNormalize: false      , description: 'Vanilla・連携 Workflow' },
-    { name: 'practice-vue'       , service: 'Vercel', useNormalize: false      , description: 'Vue'                    },
-    { name: 'neos-hatebu'        , service: 'Heroku', useNormalize: false      , description: 'Angular'                },
-    { name: 'neos21.net'         , service: 'XREA'  , useNormalize: '2.0.1 npm', description: 'Main Website'           }
+    { name: 'tv-films'           , service: 'Netlify・Vercel・GH Pages', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
+    { name: 'remark-editor'      , service: 'Vercel'                   , useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
+    { name: 'affi-code-generator', service: 'Vercel'                   , useNormalize: false      , description: 'React'                  },
+    { name: 'webrtc-video-chat'  , service: 'Glitch'                   , useNormalize: false      , description: 'Vanilla・連携 Workflow' },
+    { name: 'practice-vue'       , service: 'Vercel'                   , useNormalize: false      , description: 'Vue'                    },
+    { name: 'neos-hatebu'        , service: 'Heroku'                   , useNormalize: false      , description: 'Angular'                },
+    { name: 'neos21.net'         , service: 'XREA'                     , useNormalize: '2.0.1 npm', description: 'Main Website'           }
   ];
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
   const npmPackageRepositories = [
+    { name: 'neos-brightness'              , isForked: false, hasGitHubPages: false },
+    { name: 'neos-loudness'                , isForked: false, hasGitHubPages: false },
     { name: 'rehype-prism'                 , isForked: true , hasGitHubPages: false },
     { name: 'opu'                          , isForked: false, hasGitHubPages: false },
     { name: 'node-calc-cli'                , isForked: false, hasGitHubPages: false },
