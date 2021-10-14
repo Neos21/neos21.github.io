@@ -62,6 +62,8 @@ document.addEventListener('DOMContentLoaded', () => {
   // - `.gitignore`
   // - `git-pull-sub-directories.sh`
   const gitHubPagesRepositories = [
+    { name: 'auto-paste-url'                 , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'filmdex'                        , branch: 'gh-pages', useNormalize: '2.1.0 CDN' , description: 'Angular'          },
     { name: 'calc-resume-years'              , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'practice-preact-on-github-pages', branch: 'master'  , useNormalize: false       , description: 'Preact'           },
     { name: 'practice-riot'                  , branch: 'master'  , useNormalize: false       , description: 'Riot'             },
@@ -88,22 +90,28 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'poc-ios-safari-web'             , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
     { name: 'hatena-blogs'                   , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
     { name: 'practice-bootstrap3'            , branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
-    { name: 'neos21.github.io'               , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'GitHub Pages'     }
+    { name: 'neos21.github.io'               , branch: 'master'  , useNormalize: '2.1.0 CDN' , description: 'GitHub Pages'     }
   ];
   
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
-    { name: 'tv-films'           , service: 'Netlify・Vercel・GH Pages', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
-    { name: 'remark-editor'      , service: 'Vercel'                   , useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
-    { name: 'affi-code-generator', service: 'Vercel'                   , useNormalize: false      , description: 'React'                  },
-    { name: 'webrtc-video-chat'  , service: 'Glitch'                   , useNormalize: false      , description: 'Vanilla・連携 Workflow' },
-    { name: 'practice-vue'       , service: 'Vercel'                   , useNormalize: false      , description: 'Vue'                    },
-    { name: 'neos-hatebu'        , service: 'Heroku'                   , useNormalize: false      , description: 'Angular'                },
-    { name: 'neos21.net'         , service: 'XREA'                     , useNormalize: '2.0.1 npm', description: 'Main Website'           }
+    { name: 'practice-deta'              , service: 'Deta.sh'                  , useNormalize: false      , description: 'Express・Vanilla'       },
+    { name: 'practice-cloudflare-pages'  , service: 'CloudFlare Pages'         , useNormalize: false      , description: 'React'                  },
+    { name: 'practice-cloudflare-workers', service: 'CloudFlare Workers'       , useNormalize: false      , description: 'Vanilla'                },
+    { name: 'alumni-association'         , service: 'XREA'                     , useNormalize: false      , description: 'Vanilla'                },
+    { name: 'tv-films'                   , service: 'Netlify・Vercel・GH Pages', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
+    { name: 'remark-editor'              , service: 'Vercel'                   , useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
+    { name: 'solilog'                    , service: 'OCI IaaS'                 , useNormalize: '2.0.1 CDN', description: 'PHP・Vanilla'           },
+    { name: 'affi-code-generator'        , service: 'Vercel'                   , useNormalize: false      , description: 'React'                  },
+    { name: 'webrtc-video-chat'          , service: 'Glitch'                   , useNormalize: false      , description: 'Vanilla・連携 Workflow' },
+    { name: 'practice-vue'               , service: 'Vercel'                   , useNormalize: false      , description: 'Vue'                    },
+    { name: 'neos-hatebu'                , service: 'Heroku'                   , useNormalize: false      , description: 'Angular'                },
+    { name: 'neos21.net'                 , service: 'XREA'                     , useNormalize: '2.0.1 npm', description: 'Main Website'           }
   ];
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
   const npmPackageRepositories = [
+    { name: 'tv-films'                     , isForked: false, hasGitHubPages: true  },
     { name: 'neos-brightness'              , isForked: false, hasGitHubPages: false },
     { name: 'neos-loudness'                , isForked: false, hasGitHubPages: false },
     { name: 'rehype-prism'                 , isForked: true , hasGitHubPages: false },
