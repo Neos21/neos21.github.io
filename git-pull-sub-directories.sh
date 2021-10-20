@@ -7,6 +7,7 @@
 # - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'practice-unity-first-2d-game'
   'auto-paste-url'
   'filmdex'
   'calc-resume-years'

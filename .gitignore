@@ -8,6 +8,7 @@ node_modules/
 # 以下の記述と揃える
 # - `git-pull-sub-directories.sh`
 # - `index.html` : `const gitHubPagesRepositories`
+practice-unity-first-2d-game/
 auto-paste-url/
 filmdex/
 calc-resume-years/
