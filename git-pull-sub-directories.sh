@@ -2,7 +2,7 @@
 
 # GitHub Pages として公開しているリポジトリを取得・更新する
 # 
-# 以下の記述と揃える
+# Neos21 リポジトリ以外、以下の記述と揃える
 # - `.gitignore`
 # - `index.html` : `const gitHubPagesRepositories`
 
@@ -25,7 +25,6 @@ declare -a repositories=(
   'legacy-of-html'
   'compare-colour-contrast-ratio'
   'garbler'
-  'Neos21'
   'bookmarklets'
   'ngx-markdown-wiki'
   'bootstrap3-glyphicons'

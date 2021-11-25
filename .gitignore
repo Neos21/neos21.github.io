@@ -5,7 +5,7 @@ Thumbs.db
 
 node_modules/
 
-# 以下の記述と揃える
+# Neos21 リポジトリ以外、以下の記述と揃える
 # - `git-pull-sub-directories.sh`
 # - `index.html` : `const gitHubPagesRepositories`
 practice-unity-first-2d-game/
@@ -26,7 +26,6 @@ poc-perfect-yu-gothic/
 legacy-of-html/
 compare-colour-contrast-ratio/
 garbler/
-Neos21/
 bookmarklets/
 ngx-markdown-wiki/
 bootstrap3-glyphicons/
