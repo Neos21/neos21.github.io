@@ -7,6 +7,10 @@
 # - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'practice-wasm-rust'
+  'ddr'
+  'neos-timer'
+  'frontend-sandboxes'
   'practice-unity-first-2d-game'
   'auto-paste-url'
   'filmdex'

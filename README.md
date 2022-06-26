@@ -1,4 +1,4 @@
-# neos21.github.io
+# Neo's GitHub Pages
 
 __[Neo's GitHub Pages : https://neos21.github.io/](https://neos21.github.io/)__
 

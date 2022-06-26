@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neo's GitHub Pages</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.0.1/neos-normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.1.0/neos-normalize.min.css">
     
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="ls7kuvIKSqVa_dcixqKvFwl393swvYMkHCkG-xtlCj0">
@@ -17,22 +17,68 @@
     
     <style>
 
+:root {
+  --nn-colour-base : #323436;
+  --nn-colour-blue : #0070ff;
+  --nn-colour-green: #009070;
+}
+
+html {
+  font-size: clamp(17px, 1.7vw, 20px);
+}
+
+@media (max-width: 600px) {
+  html {
+    word-break: break-all;
+  }
+}
+
 body {
   max-width: 42rem;
   margin: 0 auto;
   padding: 0 1rem;
 }
 
-header,
-footer {
-  text-align: center;
+a {
+  text-decoration: none !important;
+  transition: .15s;
 }
 
-header a {
+h1 {
+  font-size: 3rem;
+}
+
+h1 a {
   color: inherit;
-  font-size: 1.3rem;
-  font-weight: bold;
-  text-decoration: none;
+}
+
+#skills ul {
+  padding-left: var(--nn-space-indent-default);
+  list-style: none;
+}
+
+#skills li {
+  position: relative;
+}
+
+#skills li::before {
+  content: "\00bb";
+  position: absolute;
+  left: calc(var(--nn-space-indent-default) * -1 + var(--nn-space-tiny));
+  color: var(--nn-colour-blue);
+  transition: color .15s;
+}
+
+#skills li:hover::before {
+  color: var(--nn-colour-pink);
+}
+
+#skills b {
+  color: inherit;
+}
+
+#skills span {
+  color: var(--nn-colour-grey-400);
 }
 
 .table-wrapper {
@@ -40,13 +86,20 @@ header a {
   margin: var(--nn-space-default) 0;
 }
 
-.table-wrapper > table {
+.table-wrapper table {
   width: 100%;
   margin: 0;
 }
 
-.table-wrapper > table > thead > tr > th {
+.table-wrapper table thead th {
   white-space: nowrap;
+}
+
+.text-center { text-align: center; }
+.text-right  { text-align: right ; }
+
+footer {
+  text-align: center;
 }
 
     </style>
@@ -62,143 +115,146 @@ document.addEventListener('DOMContentLoaded', () => {
   // - `.gitignore`
   // - `git-pull-sub-directories.sh`
   const gitHubPagesRepositories = [
-    { name: 'practice-unity-first-2d-game'   , branch: 'gh-pages', useNormalize: false       , description: 'Unity WebGL'      },
-    { name: 'auto-paste-url'                 , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'filmdex'                        , branch: 'gh-pages', useNormalize: '2.1.0 CDN' , description: 'Angular'          },
-    { name: 'calc-resume-years'              , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'practice-preact-on-github-pages', branch: 'master'  , useNormalize: false       , description: 'Preact'           },
-    { name: 'practice-riot'                  , branch: 'master'  , useNormalize: false       , description: 'Riot'             },
-    { name: 'site-status'                    , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'practice-svelte'                , branch: 'gh-pages', useNormalize: false       , description: 'Svelte'           },
-    { name: 'list-repos'                     , branch: 'gh-pages', useNormalize: false       , description: 'Vue'              },
-    { name: 'practice-opencvjs'              , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'birthdates'                     , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'nemui-gacha-js'                 , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Vue'              },
-    { name: 'web-camera-light-sensor'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'ios-memo-icon-generator'        , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'poc-perfect-yu-gothic'          , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'legacy-of-html'                 , branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
-    { name: 'compare-colour-contrast-ratio'  , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
-    { name: 'garbler'                        , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
-    { name: 'Neos21'                         , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'bookmarklets'                   , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'ngx-markdown-wiki'              , branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
-    { name: 'bootstrap3-glyphicons'          , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Forked Project'   },
-    { name: 'neos-normalize'                 , branch: 'master'  , useNormalize: '○'        , description: 'Neo\'s Normalize' },
-    { name: 'ccc'                            , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
-    { name: 'in-browser-sass'                , branch: 'gh-pages', useNormalize: false       , description: 'npm Demo'         },
-    { name: 'angular-utilities'              , branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
-    { name: 'poc-ios-safari-web'             , branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
-    { name: 'hatena-blogs'                   , branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
-    { name: 'practice-bootstrap3'            , branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
-    { name: 'neos21.github.io'               , branch: 'master'  , useNormalize: '2.1.0 CDN' , description: 'GitHub Pages'     }
+    { name: 'practice-wasm-rust'             , created: '2022-06-05', branch: 'master'  , useNormalize: false       , description: 'WASM Rust'        },
+    { name: 'ddr'                            , created: '2022-05-03', branch: 'master'  , useNormalize: false       , description: 'Flash'            },
+    { name: 'neos-timer'                     , created: '2022-03-26', branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
+    { name: 'frontend-sandboxes'             , created: '2021-11-09', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'practice-unity-first-2d-game'   , created: '2021-10-18', branch: 'gh-pages', useNormalize: false       , description: 'Unity WebGL'      },
+    { name: 'auto-paste-url'                 , created: '2021-09-02', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'filmdex'                        , created: '2021-08-23', branch: 'gh-pages', useNormalize: '2.1.0 npm' , description: 'Angular'          },
+    { name: 'calc-resume-years'              , created: '2021-06-30', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'practice-preact-on-github-pages', created: '2021-02-08', branch: 'master'  , useNormalize: false       , description: 'Preact'           },
+    { name: 'practice-riot'                  , created: '2021-01-08', branch: 'master'  , useNormalize: false       , description: 'Riot'             },
+    { name: 'site-status'                    , created: '2020-08-27', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'practice-svelte'                , created: '2020-07-30', branch: 'gh-pages', useNormalize: false       , description: 'Svelte'           },
+    { name: 'list-repos'                     , created: '2020-07-15', branch: 'gh-pages', useNormalize: false       , description: 'Vue'              },
+    { name: 'practice-opencvjs'              , created: '2020-06-08', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'birthdates'                     , created: '2020-05-21', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'nemui-gacha-js'                 , created: '2020-04-18', branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Vue'              },
+    { name: 'web-camera-light-sensor'        , created: '2020-03-28', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'ios-memo-icon-generator'        , created: '2020-01-22', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'poc-perfect-yu-gothic'          , created: '2020-01-17', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'legacy-of-html'                 , created: '2019-06-04', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'compare-colour-contrast-ratio'  , created: '2019-02-21', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
+    { name: 'garbler'                        , created: '2019-02-21', branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'bookmarklets'                   , created: '2018-07-07', branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'ngx-markdown-wiki'              , created: '2018-06-23', branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
+    { name: 'bootstrap3-glyphicons'          , created: '2018-02-26', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Forked Project'   },
+    { name: 'neos-normalize'                 , created: '2018-02-14', branch: 'master'  , useNormalize: '○'        , description: 'Neo\'s Normalize' },
+    { name: 'ccc'                            , created: '2017-12-23', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
+    { name: 'in-browser-sass'                , created: '2017-12-06', branch: 'gh-pages', useNormalize: false       , description: 'npm Demo'         },
+    { name: 'angular-utilities'              , created: '2017-10-14', branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
+    { name: 'poc-ios-safari-web'             , created: '2017-09-19', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
+    { name: 'hatena-blogs'                   , created: '2017-01-30', branch: 'gh-pages', useNormalize: '2.0.1 CDN' , description: 'Hatena Blogs'     },
+    { name: 'practice-bootstrap3'            , created: '2016-09-05', branch: 'master'  , useNormalize: false       , description: 'Bootstrap3'       },
+    { name: 'neos21.github.io'               , created: '2016-02-28', branch: 'master'  , useNormalize: '2.1.0 CDN' , description: 'GitHub Pages'     }
   ];
   
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
-    { name: 'practice-deta'              , service: 'Deta.sh'                  , useNormalize: false      , description: 'Express・Vanilla'       },
-    { name: 'practice-cloudflare-pages'  , service: 'CloudFlare Pages'         , useNormalize: false      , description: 'React'                  },
-    { name: 'practice-cloudflare-workers', service: 'CloudFlare Workers'       , useNormalize: false      , description: 'Vanilla'                },
-    { name: 'alumni-association'         , service: 'XREA'                     , useNormalize: false      , description: 'Vanilla'                },
-    { name: 'tv-films'                   , service: 'Netlify・Vercel・GH Pages', useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
-    { name: 'remark-editor'              , service: 'Vercel'                   , useNormalize: '2.0.1 CDN', description: 'Vanilla'                },
-    { name: 'solilog'                    , service: 'OCI IaaS'                 , useNormalize: '2.0.1 CDN', description: 'PHP・Vanilla'           },
-    { name: 'affi-code-generator'        , service: 'Vercel'                   , useNormalize: false      , description: 'React'                  },
-    { name: 'webrtc-video-chat'          , service: 'Glitch'                   , useNormalize: false      , description: 'Vanilla・連携 Workflow' },
-    { name: 'practice-vue'               , service: 'Vercel'                   , useNormalize: false      , description: 'Vue'                    },
-    { name: 'neos-hatebu'                , service: 'Heroku'                   , useNormalize: false      , description: 'Angular'                },
-    { name: 'neos21.net'                 , service: 'XREA'                     , useNormalize: '2.0.1 npm', description: 'Main Website'           }
+    { name: 'neo.s21.xrea.com'           , created: '2021-10-24', url: 'https://neos21.tk/'                          , service: 'XREA'                     , useNormalize: '2.1.0 CDN', description: 'Vanilla'             },
+    { name: 'practice-deta'              , created: '2021-07-28', url: 'https://neos21-practice-deta.deta.dev/'      , service: 'Deta.sh'                  , useNormalize: false      , description: 'Express・Vanilla'    },
+    { name: 'practice-cloudflare-pages'  , created: '2021-07-08', url: 'https://practice-cloudflare-pages.pages.dev/', service: 'CloudFlare Pages'         , useNormalize: false      , description: 'React'               },
+    { name: 'practice-cloudflare-workers', created: '2021-07-08', url: 'https://practice.neos21.workers.dev/'        , service: 'CloudFlare Workers'       , useNormalize: false      , description: 'Vanilla'             },
+    { name: 'alumni-association'         , created: '2021-04-02', url: 'http://alumni.g3.xrea.com/b83zT711q/'        , service: 'XREA'                     , useNormalize: false      , description: 'Vanilla'             },
+    { name: 'tv-films'                   , created: '2020-12-28', url: 'https://tv-films.netlify.app/'               , service: 'Netlify・Vercel・GH Pages', useNormalize: '2.0.1 CDN', description: 'Vanilla'             },
+    { name: 'remark-editor'              , created: '2020-11-10', url: 'https://remark-editor.vercel.app/'           , service: 'Vercel'                   , useNormalize: '2.0.1 CDN', description: 'Vanilla'             },
+    { name: 'solilog'                    , created: '2020-10-26', url: 'https://neos21-oci.cf/solilog/'              , service: 'OCI IaaS'                 , useNormalize: '2.0.1 CDN', description: 'PHP・Vanilla'        },
+    { name: 'affi-code-generator'        , created: '2020-10-15', url: 'https://affi-code-generator.vercel.app/'     , service: 'Vercel'                   , useNormalize: false      , description: 'React'               },
+    { name: 'webrtc-video-chat'          , created: '2020-06-28', url: 'https://neos21-webrtc-video-chat.glitch.me/' , service: 'Glitch'                   , useNormalize: false      , description: 'Vanilla・GH Actions' },
+    { name: 'practice-vue'               , created: '2019-09-16', url: 'https://practice-vue-neos21.vercel.app/'     , service: 'Vercel'                   , useNormalize: false      , description: 'Vue'                 },
+    { name: 'neos-dream'                 , created: '2018-12-02', url: 'https://neos21dream.tumblr.com/'             , service: 'Tumblr'                   , useNormalize: '0.0.0'    , description: 'Tumblr Page Design'  },
+    { name: 'neos-hatebu'                , created: '2018-11-06', url: 'https://neos-hatebu.herokuapp.com/'          , service: 'Heroku'                   , useNormalize: false      , description: 'Angular'             }
   ];
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
   const npmPackageRepositories = [
-    { name: 'tv-films'                     , isForked: false, hasGitHubPages: true  },
-    { name: 'neos-brightness'              , isForked: false, hasGitHubPages: false },
-    { name: 'neos-loudness'                , isForked: false, hasGitHubPages: false },
-    { name: 'rehype-prism'                 , isForked: true , hasGitHubPages: false },
-    { name: 'opu'                          , isForked: false, hasGitHubPages: false },
-    { name: 'node-calc-cli'                , isForked: false, hasGitHubPages: false },
-    { name: 'bookmarkletify'               , isForked: false, hasGitHubPages: false },
-    { name: 'igsv'                         , isForked: false, hasGitHubPages: false },
-    { name: 'twsv'                         , isForked: false, hasGitHubPages: false },
-    { name: 'just-tweet'                   , isForked: false, hasGitHubPages: false },
-    { name: 'compare-colour-contrast-ratio', isForked: false, hasGitHubPages: true  },
-    { name: 'neos-password-manager'        , isForked: false, hasGitHubPages: false },
-    { name: 'neos-npm-blog'                , isForked: false, hasGitHubPages: false },
-    { name: 'bootstrap3-glyphicons'        , isForked: true , hasGitHubPages: true  },
-    { name: 'neos-normalize'               , isForked: false, hasGitHubPages: true  },
-    { name: 'ccc'                          , isForked: false, hasGitHubPages: true  },
-    { name: 'req-cmd'                      , isForked: false, hasGitHubPages: false },
-    { name: 'in-browser-sass'              , isForked: false, hasGitHubPages: true  },
-    { name: 'gulp-template-html'           , isForked: true , hasGitHubPages: false },
-    { name: 'template-html'                , isForked: true , hasGitHubPages: false },
-    { name: 'npm-neos21'                   , isForked: false, hasGitHubPages: false },
-    { name: 'hatena-blogs'                 , isForked: false, hasGitHubPages: true  }
+    //{ name: 'detect-chinese'               , created: '2022-06-11', isForked: false, hasGitHubPages: false },
+    //{ name: 'convert-encoding-newline'     , created: '2022-06-01', isForked: false, hasGitHubPages: false },
+    //{ name: 'neos-validators-js'           , created: '2022-01-07', isForked: false, hasGitHubPages: false },
+    { name: 'tv-films'                     , created: '2020-12-28', isForked: false, hasGitHubPages: true  },
+    { name: 'neos-brightness'              , created: '2020-12-25', isForked: false, hasGitHubPages: false },
+    { name: 'neos-loudness'                , created: '2020-12-25', isForked: false, hasGitHubPages: false },
+    { name: 'rehype-prism'                 , created: '2020-11-10', isForked: true , hasGitHubPages: false },
+    { name: 'opu'                          , created: '2020-07-20', isForked: false, hasGitHubPages: false },
+    { name: 'node-calc-cli'                , created: '2020-01-10', isForked: false, hasGitHubPages: false },
+    { name: 'bookmarkletify'               , created: '2019-11-22', isForked: false, hasGitHubPages: false },
+    { name: 'igsv'                         , created: '2019-07-24', isForked: false, hasGitHubPages: false },
+    { name: 'twsv'                         , created: '2019-07-23', isForked: false, hasGitHubPages: false },
+    { name: 'just-tweet'                   , created: '2019-06-04', isForked: false, hasGitHubPages: false },
+    { name: 'compare-colour-contrast-ratio', created: '2019-02-21', isForked: false, hasGitHubPages: true  },
+    { name: 'neos-password-manager'        , created: '2018-12-12', isForked: false, hasGitHubPages: false },
+    { name: 'neos-npm-blog'                , created: '2018-04-27', isForked: false, hasGitHubPages: false },
+    { name: 'bootstrap3-glyphicons'        , created: '2018-02-26', isForked: true , hasGitHubPages: true  },
+    { name: 'neos-normalize'               , created: '2018-02-14', isForked: false, hasGitHubPages: true  },
+    { name: 'ccc'                          , created: '2017-12-23', isForked: false, hasGitHubPages: true  },
+    { name: 'req-cmd'                      , created: '2017-12-19', isForked: false, hasGitHubPages: false },
+    { name: 'in-browser-sass'              , created: '2017-12-06', isForked: false, hasGitHubPages: true  },
+    { name: 'gulp-template-html'           , created: '2017-08-03', isForked: true , hasGitHubPages: false },
+    { name: 'template-html'                , created: '2017-07-26', isForked: true , hasGitHubPages: false },
+    { name: 'npm-neos21'                   , created: '2017-07-25', isForked: false, hasGitHubPages: false },
+    { name: 'hatena-blogs'                 , created: '2017-01-30', isForked: false, hasGitHubPages: true  }
   ];
   
   const tableFooter = '</tbody></table></div>';
   
   document.getElementById('github-pages-repositories').insertAdjacentHTML('beforeend',
-    `
-      <div class="table-wrapper">
+    ` <div class="table-wrapper">
         <table>
           <thead>
+            <th>No</th>
             <th>Repository</th>
-            <th>Branch</th>
-            <th><abbr title="Neo's Normalize">NN</abbr></th>
+            <th><abbr title="GitHub Pages">GHP</abbr></th>
             <th>Description</th>
           </thead>
-          <tbody>
-    `
-    + gitHubPagesRepositories.map((repo) => {
-        const name         = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
-        const branch       = `<td><a href="${gitHubPagesUrlPrefix}${repo.name}">${repo.branch}</a></td>`;
-        const useNormalize = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
-        const description  = `<td>${repo.description}</td>`;
-        return `<tr>${name}${branch}${useNormalize}${description}</tr>`;
-      }).join('')
+          <tbody>`
+    + gitHubPagesRepositories.reduce((html, repo, index) => {
+        const no          = `<td class="text-right" title="Created : ${repo.created}">${gitHubPagesRepositories.length - index}</td>`;
+        const name        = `<td><a href="${repositoryUrlPrefix}${repo.name}" title="Neo\'s Normalize : ${repo.useNormalize === false ? '-' : repo.useNormalize}">${repo.name}</a></td>`;
+        const ghp         = `<td class="text-center"><a href="${gitHubPagesUrlPrefix}${repo.name}" title="Branch : ${repo.branch}">■</a></td>`;
+        const description = `<td>${repo.description}</td>`;
+        return `${html}<tr>${no}${name}${ghp}${description}</tr>`;
+      }, '')
     + tableFooter
   );
   
   document.getElementById('hosting-other-service-repositories').insertAdjacentHTML('beforeend',
-    `
-      <div class="table-wrapper">
+    ` <div class="table-wrapper">
         <table>
           <thead>
+            <th>No</th>
             <th>Repository</th>
             <th>Service</th>
-            <th><abbr title="Neo's Normalize">NN</abbr></th>
             <th>Description</th>
           </thead>
-          <tbody>
-    `
-    + hostingOtherServiceRepositories.map((repo) => {
-        const name         = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
-        const service      = `<td>${repo.service}</td>`;
-        const useNormalize = `<td>${repo.useNormalize === false ? '-' : repo.useNormalize}</td>`;
-        const description  = `<td>${repo.description}</td>`;
-        return `<tr>${name}${service}${useNormalize}${description}</tr>`;
-      }).join('')
+          <tbody>`
+    + hostingOtherServiceRepositories.reduce((html, repo, index) => {
+        const no          = `<td class="text-right" title="Created : ${repo.created}">${hostingOtherServiceRepositories.length - index}</td>`;
+        const name        = `<td><a href="${repositoryUrlPrefix}${repo.name}" title="Neo\'s Normalize : ${repo.useNormalize === false ? '-' : repo.useNormalize}">${repo.name}</a></td>`;
+        const service     = `<td><a href="${repo.url}">${repo.service}</a></td>`;
+        const description = `<td>${repo.description}</td>`;
+        return `${html}<tr>${no}${name}${service}${description}</tr>`;
+      }, '')
     + tableFooter
   );
   
   document.getElementById('npm-package-repositories').insertAdjacentHTML('beforeend',
-    `
-      <div class="table-wrapper">
+    ` <div class="table-wrapper">
         <table>
           <thead>
+            <th>No</th>
             <th>Repository</th>
-            <th>Forked</th>
             <th><abbr title="GitHub Pages">GHP</abbr></th>
+            <th>Forked</th>
           </thead>
-          <tbody>
-    `
-    + npmPackageRepositories.map((repo) => {
-        const name           = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
-        const isForked       = `<td>${repo.isForked ? '○' : '-'}</td>`;
-        const hasGitHubPages = `<td>${repo.hasGitHubPages ? '<a href="' + gitHubPagesUrlPrefix + repo.name + '">○</a>' : '-'}</td>`;
-        return `<tr>${name}${isForked}${hasGitHubPages}</tr>`;
-      }).join('')
+          <tbody>`
+    + npmPackageRepositories.reduce((html, repo, index) => {
+        const no       = `<td class="text-right" title="Created : ${repo.created}">${npmPackageRepositories.length - index}</td>`;
+        const name     = `<td><a href="${repositoryUrlPrefix}${repo.name}">${repo.name}</a></td>`;
+        const ghp      = `<td class="text-center">${repo.hasGitHubPages ? '<a href="' + gitHubPagesUrlPrefix + repo.name + '">■</a>' : '-'}</td>`;
+        const isForked = `<td class="text-center">${repo.isForked ? '○' : '-'}</td>`;
+        return `${html}<tr>${no}${name}${ghp}${isForked}</tr>`;
+      }, '')
     + tableFooter
   );
 });
@@ -206,40 +262,84 @@ document.addEventListener('DOMContentLoaded', () => {
     </script>
   </head>
   <body>
-    <header><a href="/index.html">Neo's GitHub Pages</a></header>
-    <main>
-      <section>
-        <h1>Neo's GitHub Pages</h1>
-        <p><a href="https://neos21.net/">Neo's World</a> を運営する <strong><a href="https://neos21.github.io/Neos21/">Neo</a></strong> の GitHub Pages。</p>
-        <section id="github-repositories">
-          <h2>GitHub Repositories</h2>
-          <p>Neo が作成した GitHub リポジトリ一覧は、<a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a>、拙作の <em><a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a></em> アプリからご覧ください。</p>
-        </section>
-        <section id="github-pages-repositories">
-          <h2>GitHub Pages Repositories</h2>
-          <p>GitHub Pages が存在するリポジトリ一覧。</p>
-          <!-- Insert Table From JS Here -->
-        </section>
-        <section id="hosting-other-service-repositories">
-          <h2>Hosting Other Service Repositories</h2>
-          <p>GitHub Pages 以外でサイトをホスティングしているリポジトリ一覧。</p>
-          <!-- Insert Table From JS Here -->
-        </section>
-        <section id="npm-package-repositories">
-          <h2>npm Package Repositories</h2>
-          <p>npm パッケージを管理しているリポジトリ一覧。</p>
-          <!-- Insert Table From JS Here -->
-        </section>
-        <section id="links">
-          <h2>Links</h2>
-          <ul>
-            <li><a href="https://neos21.net/">Neo's World</a></li>
-            <li><a href="https://github.com/Neos21">GitHub - Neos21</a></li>
-            <li><a href="https://github.com/Neos21/neos21.github.io">GitHub - neos21.github.io</a></li>
-          </ul>
-        </section>
-      </section>
-    </main>
-    <footer>Copyright &copy; 2016-2021 <a href="https://neos21.net/">Neo</a>, All rights reserved.</footer>
+
+<header>
+  <h1><a href="https://github.com/Neos21/neos21.github.io">Neo's GitHub Pages</a></h1>
+</header>
+  
+<main>
+  <section id="neo">
+    <h2>Neo</h2>
+    <p>Japanese Web Engineer lived in Tokyo. 日本のウェブエンジニアです。</p>
+    <ul>
+      <li><strong><a href="https://neos21.net/">Neo's World</a></strong> : My Personal WebSite / Blog Since 2002</li>
+      <li><em><a href="https://neos21.github.io/">Neo's GitHub Pages</a></em> : Here</li>
+      <li><a href="https://github.com/Neos21">GitHub</a> : Codes</li>
+      <li><a href="https://www.npmjs.com/~neos21">npm</a> : Node.js Packages</li>
+      <li><a href="https://marketplace.visualstudio.com/publishers/Neos21">Visual Studio Marketplace</a> : VSCode Theme</li>
+      <li><a href="https://github.com/sponsors/Neos21">GitHub Sponsors</a> : Please Donate</li>
+      <li><a href="https://www.slideshare.net/NeoXrea">SlideShare</a> : Slides</li>
+      <li><a href="https://www.linkedin.com/in/Neos21">LinkedIn</a> : Hire Me</li>
+      <li><a href="https://www.facebook.com/Neos21">Facebook</a> : Personal</li>
+      <li><a href="https://www.instagram.com/Neos21">Instagram</a> : Photos &amp; Videos</li>
+      <li>E-Mail : <img src="data:image/png;base64,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" alt="E-Mail"></li>
+    </ul>
+  </section>
+  
+  <section id="github-repositories">
+    <h2>GitHub Repositories</h2>
+    <p>全ての GitHub リポジトリ一覧は <a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a> もしくは拙作の <em><a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a></em> アプリからご覧ください。</p>
+  </section>
+  
+  <section id="github-pages-repositories">
+    <h2>GitHub Pages Repositories</h2>
+    <p>GitHub Pages が存在するリポジトリ一覧。</p>
+    <!-- Insert Table From JS Here -->
+  </section>
+  
+  <section id="hosting-other-service-repositories">
+    <h2>Hosting Other Service Repositories</h2>
+    <p>GitHub Pages 以外でサイトをホスティングしているリポジトリ一覧。</p>
+    <!-- Insert Table From JS Here -->
+  </section>
+  
+  <section id="npm-package-repositories">
+    <h2>npm Package Repositories</h2>
+    <p><a href="https://www.npmjs.com/~neos21">npm パッケージ</a>を管理しているリポジトリ一覧。</p>
+    <!-- Insert Table From JS Here -->
+  </section>
+  
+  <section id="skills">
+    <h2>Skills</h2>
+    <ul>
+      <li><b>HTML (HTML5)</b></li>
+      <li><b>CSS (CSS3)</b> <span>/</span> SCSS <span>/</span> Bootstrap <span>/</span> Material Design</li>
+      <li><b>JavaScript (ECMAScript)</b> <span>/</span> Node.js <span>/</span> npm <span>/</span> Deno <span>/</span> Apache Cordova <span>/</span> jQuery</li>
+      <li><b>TypeScript</b> <span>/</span> Angular <span>/</span> Vue.js <span>/</span> React (Preact) <span>/</span> Riot <span>/</span> Svelte</li>
+      <li><b>VM</b> <span>:</span> Docker <span>/</span> Kubernetes <span>/</span> VirtualBox <span>/</span> Vagrant</li>
+      <li><b>Cloud</b> <span>:</span> Oracle Cloud (OCI) <span>/</span> Google Cloud Platform (GCP) <span>/</span> Amazon Web Services (AWS) <span>/</span> Azure <span>/</span> Alibaba Cloud <span>/</span> Terraform <span>/</span> Ansible</li>
+      <li><b>VCS</b> <span>:</span> Git <span>/</span> SVN</li>
+      <li><b>Linux</b> <span>:</span> Ubuntu <span>/</span> Xubuntu <span>/</span> Fedora <span>/</span> CentOS <span>/</span> Bash</li>
+      <li><b>SQL</b> <span>:</span> Oracle DB <span>/</span> PL*SQL <span>/</span> PostgreSQL <span>/</span> MySQL <span>/</span> SQLite</li>
+      <li><b>Java</b> <span>/</span> Maven <span>/</span> Spring Boot <span>/</span> Struts <span>/</span> Ant <span>/</span> JavaFX</li>
+      <li><b>Python</b> <span>/</span> pipenv</li>
+      <li><b>Ruby</b> <span>/</span> Ruby on Rails</li>
+      <li><b>PHP</b> <span>/</span> Composer</li>
+      <li><b>Perl (CGI)</b></li>
+      <li><b>Swift (iOS App)</b></li>
+      <li><b>Go Lang</b></li>
+      <li><b>Rust</b></li>
+      <li><b>Excel VBA</b> <span>/</span> VBScript</li>
+      <li><b>Windows Batch</b> <span>/</span> Command Prompt <span>/</span> WSH <span>/</span> PowerShell</li>
+      <li><b>Middleware</b> <span>:</span> Express <span>/</span> nginx <span>/</span> Apache Tomcat <span>/</span> WebLogic Server</li>
+      <li><b>Editing</b> <span>:</span> Adobe Photoshop <span>/</span> Lightroom <span>/</span> Premiere Pro <span>/</span> After Effects</li>
+      <li><b>Creative</b> <span>:</span> Blender (3DCG) <span>/</span> Reason (DTM)</li>
+      <li><b>Others</b> <span>:</span> Web Design <span>/</span> UML <span>/</span> RESTful API <span>/</span> WebRTC</li>
+    </ul>
+  </section>
+</main>
+
+<footer>Copyright &copy; 2016-2022 <a href="https://neos21.net/">Neo</a>, All rights reserved.</footer>
+
   </body>
 </html>
