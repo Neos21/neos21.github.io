@@ -115,6 +115,10 @@ document.addEventListener('DOMContentLoaded', () => {
   // - `.gitignore`
   // - `git-pull-sub-directories.sh`
   const gitHubPagesRepositories = [
+    { name: 'in-browser-ts'                  , created: '2022-07-30', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'tab2tab'                        , created: '2022-07-28', branch: 'gh-pages', useNormalize: false       , description: 'Vanilla'          },
+    { name: 'neos-monaco-note'               , created: '2022-07-23', branch: 'master'  , useNormalize: false       , description: 'Monaco Editor'    },
+    { name: 'detect-chinese'                 , created: '2022-06-11', branch: 'gh-pages', useNormalize: false       , description: 'TypeScript'       },
     { name: 'practice-wasm-rust'             , created: '2022-06-05', branch: 'master'  , useNormalize: false       , description: 'WASM Rust'        },
     { name: 'ddr'                            , created: '2022-05-03', branch: 'master'  , useNormalize: false       , description: 'Flash'            },
     { name: 'neos-timer'                     , created: '2022-03-26', branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
@@ -169,9 +173,11 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
   const npmPackageRepositories = [
-    //{ name: 'detect-chinese'               , created: '2022-06-11', isForked: false, hasGitHubPages: false },
-    //{ name: 'convert-encoding-newline'     , created: '2022-06-01', isForked: false, hasGitHubPages: false },
-    //{ name: 'neos-validators-js'           , created: '2022-01-07', isForked: false, hasGitHubPages: false },
+    { name: 'in-browser-ts'                , created: '2022-07-30', isForked: false, hasGitHubPages: true  },
+    { name: 'tab2tab'                      , created: '2022-07-28', isForked: false, hasGitHubPages: true  },
+    { name: 'detect-chinese'               , created: '2022-06-11', isForked: false, hasGitHubPages: true  },
+    { name: 'convert-encoding-newline'     , created: '2022-06-01', isForked: false, hasGitHubPages: false },
+    { name: 'neos-validator'               , created: '2022-01-07', isForked: false, hasGitHubPages: true  },
     { name: 'tv-films'                     , created: '2020-12-28', isForked: false, hasGitHubPages: true  },
     { name: 'neos-brightness'              , created: '2020-12-25', isForked: false, hasGitHubPages: false },
     { name: 'neos-loudness'                , created: '2020-12-25', isForked: false, hasGitHubPages: false },

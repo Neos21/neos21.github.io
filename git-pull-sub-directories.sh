@@ -7,6 +7,10 @@
 # - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'in-browser-ts'
+  'tab2tab'
+  'neos-monaco-note'
+  'detect-chinese'
   'practice-wasm-rust'
   'ddr'
   'neos-timer'
