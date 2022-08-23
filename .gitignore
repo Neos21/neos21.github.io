@@ -6,8 +6,9 @@ Thumbs.db
 node_modules/
 
 # Neos21 リポジトリ以外、以下の記述と揃える
-# - `git-pull-sub-directories.sh`
+# - `git-pull-sub-directories.bash`
 # - `index.html` : `const gitHubPagesRepositories`
+google-translator/
 in-browser-ts/
 tab2tab/
 neos-monaco-note/
@@ -31,6 +32,7 @@ nemui-gacha-js/
 web-camera-light-sensor/
 ios-memo-icon-generator/
 poc-perfect-yu-gothic/
+bookmarkletify/
 legacy-of-html/
 compare-colour-contrast-ratio/
 garbler/

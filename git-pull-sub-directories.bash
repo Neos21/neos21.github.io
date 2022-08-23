@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 # GitHub Pages として公開しているリポジトリを取得・更新する
 # 
@@ -7,6 +7,7 @@
 # - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'google-translator'
   'in-browser-ts'
   'tab2tab'
   'neos-monaco-note'
@@ -30,6 +31,7 @@ declare -a repositories=(
   'web-camera-light-sensor'
   'ios-memo-icon-generator'
   'poc-perfect-yu-gothic'
+  'bookmarkletify'
   'legacy-of-html'
   'compare-colour-contrast-ratio'
   'garbler'

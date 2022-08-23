@@ -117,8 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
   // 
   // 以下の記述と揃える
   // - `.gitignore`
-  // - `git-pull-sub-directories.sh`
+  // - `git-pull-sub-directories.bash`
   const gitHubPagesRepositories = [
+    { name: 'google-translator'              , created: '2022-08-18', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'in-browser-ts'                  , created: '2022-07-30', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'tab2tab'                        , created: '2022-07-28', branch: 'gh-pages', useNormalize: false       , description: 'Vanilla'          },
     { name: 'neos-monaco-note'               , created: '2022-07-23', branch: 'master'  , useNormalize: false       , description: 'Monaco Editor'    },
@@ -142,6 +143,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'web-camera-light-sensor'        , created: '2020-03-28', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'ios-memo-icon-generator'        , created: '2020-01-22', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'poc-perfect-yu-gothic'          , created: '2020-01-17', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'bookmarkletify'                 , created: '2019-11-22', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'legacy-of-html'                 , created: '2019-06-04', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'compare-colour-contrast-ratio'  , created: '2019-02-21', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'npm Demo'         },
     { name: 'garbler'                        , created: '2019-02-21', branch: 'gh-pages', useNormalize: '1.0.15 npm', description: 'Angular'          },
@@ -177,6 +179,7 @@ document.addEventListener('DOMContentLoaded', () => {
   
   // npm パッケージを管理しているリポジトリ一覧 (Secrets で Token 管理している)
   const npmPackageRepositories = [
+    { name: 'simple-notify'                , created: '2022-08-13', isForked: false, hasGitHubPages: false },
     { name: 'in-browser-ts'                , created: '2022-07-30', isForked: false, hasGitHubPages: true  },
     { name: 'tab2tab'                      , created: '2022-07-28', isForked: false, hasGitHubPages: true  },
     { name: 'detect-chinese'               , created: '2022-06-11', isForked: false, hasGitHubPages: true  },
@@ -336,11 +339,11 @@ document.addEventListener('DOMContentLoaded', () => {
       <li><b>Ruby</b> <span>/</span> Ruby on Rails</li>
       <li><b>PHP</b> <span>/</span> Composer</li>
       <li><b>Perl (CGI)</b></li>
-      <li><b>Swift (iOS App)</b> <span>/</span> Objective-C</li>
+      <li><b>Swift (iOS App)</b> <span>/</span> <b>Objective-C</b></li>
       <li><b>Go Lang</b></li>
       <li><b>Rust</b></li>
       <li><b>Zig</b></li>
-      <li><b>C</b></li>
+      <li><b>C</b> <span>/</span> <b>C++</b></li>
       <li><b>Excel VBA</b> <span>/</span> VBScript</li>
       <li><b>Windows Batch</b> <span>/</span> Command Prompt <span>/</span> WSH <span>/</span> PowerShell <span>/</span> C#.NET</li>
       <li><b>Middleware</b> <span>:</span> Express <span>/</span> nginx <span>/</span> Apache Tomcat <span>/</span> WebLogic Server</li>
