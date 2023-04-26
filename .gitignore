@@ -8,6 +8,8 @@ node_modules/
 # Neos21 リポジトリ以外、以下の記述と揃える
 # - `git-pull-sub-directories.bash`
 # - `index.html` : `const gitHubPagesRepositories`
+linguist-languages/
+luckysheet/
 google-translator/
 in-browser-ts/
 tab2tab/

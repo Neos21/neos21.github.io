@@ -7,6 +7,8 @@
 # - `index.html` : `const gitHubPagesRepositories`
 
 declare -a repositories=(
+  'linguist-languages'
+  'luckysheet'
   'google-translator'
   'in-browser-ts'
   'tab2tab'
