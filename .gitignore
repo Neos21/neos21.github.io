@@ -8,6 +8,13 @@ node_modules/
 # Neos21 リポジトリ以外、以下の記述と揃える
 # - `git-pull-sub-directories.bash`
 # - `index.html` : `const gitHubPagesRepositories`
+# - `sitemap.xml`
+unfinished-sympathy/
+our-room/
+practice-phaser-ts/
+nnkp-slack-log-viewer/
+jimi-hendrix/
+practice-next-js/
 linguist-languages/
 luckysheet/
 google-translator/
@@ -23,6 +30,7 @@ practice-unity-first-2d-game/
 auto-paste-url/
 filmdex/
 calc-resume-years/
+alumni-association/
 practice-preact-on-github-pages/
 practice-riot/
 site-status/

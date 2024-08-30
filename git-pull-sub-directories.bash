@@ -5,8 +5,14 @@
 # Neos21 リポジトリ以外、以下の記述と揃える
 # - `.gitignore`
 # - `index.html` : `const gitHubPagesRepositories`
-
+# - `sitemap.xml`
 declare -a repositories=(
+  'unfinished-sympathy'
+  'our-room'
+  'practice-phaser-ts'
+  'nnkp-slack-log-viewer'
+  'jimi-hendrix'
+  'practice-next-js'
   'linguist-languages'
   'luckysheet'
   'google-translator'
@@ -22,6 +28,7 @@ declare -a repositories=(
   'auto-paste-url'
   'filmdex'
   'calc-resume-years'
+  'alumni-association'
   'practice-preact-on-github-pages'
   'practice-riot'
   'site-status'

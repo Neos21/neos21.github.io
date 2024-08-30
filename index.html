@@ -118,7 +118,14 @@ document.addEventListener('DOMContentLoaded', () => {
   // 以下の記述と揃える
   // - `.gitignore`
   // - `git-pull-sub-directories.bash`
+  // - `sitemap.xml`
   const gitHubPagesRepositories = [
+    { name: 'unfinished-sympathy'            , created: '2024-08-30', branch: 'master'  , useNormalize: '2.1.2 CDN' , description: 'Vanilla'          },
+    { name: 'our-room'                       , created: '2024-08-30', branch: 'master'  , useNormalize: '2.1.2 CDN' , description: 'Vanilla'          },
+    { name: 'practice-phaser-ts'             , created: '2024-04-23', branch: 'master'  , useNormalize: false       , description: 'Phaser.js'        },
+    { name: 'nnkp-slack-log-viewer'          , created: '2024-01-30', branch: 'gh-pages', useNormalize: false       , description: 'Angular'          },
+    { name: 'jimi-hendrix'                   , created: '2023-11-15', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'practice-next-js'               , created: '2023-05-06', branch: 'master'  , useNormalize: false       , description: 'Next.js'          },
     { name: 'linguist-languages'             , created: '2023-01-24', branch: 'master'  , useNormalize: false       , description: 'Angular'          },
     { name: 'luckysheet'                     , created: '2022-10-18', branch: 'gh-pages', useNormalize: false       , description: 'Luckysheet'       },
     { name: 'google-translator'              , created: '2022-08-18', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
@@ -134,6 +141,7 @@ document.addEventListener('DOMContentLoaded', () => {
     { name: 'auto-paste-url'                 , created: '2021-09-02', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
     { name: 'filmdex'                        , created: '2021-08-23', branch: 'gh-pages', useNormalize: '2.1.0 npm' , description: 'Angular'          },
     { name: 'calc-resume-years'              , created: '2021-06-30', branch: 'master'  , useNormalize: false       , description: 'Vanilla'          },
+    { name: 'alumni-association'             , created: '2021-04-02', branch: 'master'  , useNormalize: '2.1.2 CDN' , description: 'Vanilla'          },
     { name: 'practice-preact-on-github-pages', created: '2021-02-08', branch: 'master'  , useNormalize: false       , description: 'Preact'           },
     { name: 'practice-riot'                  , created: '2021-01-08', branch: 'master'  , useNormalize: false       , description: 'Riot'             },
     { name: 'site-status'                    , created: '2020-08-27', branch: 'master'  , useNormalize: '2.0.1 CDN' , description: 'Vanilla'          },
@@ -165,14 +173,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // GitHub Pages 以外でホスティングしているリポジトリ一覧
   const hostingOtherServiceRepositories = [
     { name: 'legacy-of-bbs'              , created: '2022-12-31', url: 'https://legacy-of-bbs.pages.dev/'            , service: 'CloudFlare Pages Functions', useNormalize: false      , description: 'Vanilla'             },
-    { name: 'neo.s21.xrea.com'           , created: '2021-10-24', url: 'https://neos21.tk/'                          , service: 'XREA'                      , useNormalize: '2.1.0 CDN', description: 'Vanilla'             },
+    { name: 'neo.s21.xrea.com'           , created: '2021-10-24', url: 'http://neo.s21.xrea.com/'                    , service: 'XREA'                      , useNormalize: '2.1.0 CDN', description: 'Vanilla'             },
     { name: 'practice-deta'              , created: '2021-07-28', url: 'https://neos21-practice-deta.deta.dev/'      , service: 'Deta.sh'                   , useNormalize: false      , description: 'Express・Vanilla'    },
     { name: 'practice-cloudflare-pages'  , created: '2021-07-08', url: 'https://practice-cloudflare-pages.pages.dev/', service: 'CloudFlare Pages'          , useNormalize: false      , description: 'React'               },
     { name: 'practice-cloudflare-workers', created: '2021-07-08', url: 'https://practice.neos21.workers.dev/'        , service: 'CloudFlare Workers'        , useNormalize: false      , description: 'Vanilla'             },
-    { name: 'alumni-association'         , created: '2021-04-02', url: 'http://alumni.g3.xrea.com/b83zT711q/'        , service: 'XREA'                      , useNormalize: false      , description: 'Vanilla'             },
-    { name: 'tv-films'                   , created: '2020-12-28', url: 'https://tv-films.netlify.app/'               , service: 'Netlify・Vercel・GH Pages' , useNormalize: '2.0.1 CDN', description: 'Vanilla'             },
+    { name: 'alumni-association'         , created: '2021-04-02', url: 'http://alumni.g3.xrea.com/'                  , service: 'XREA'                      , useNormalize: '2.1.2 CDN', description: 'Vanilla'             },
+    { name: 'tv-films'                   , created: '2020-12-28', url: 'https://tv-films.vercel.app/'                , service: 'Vercel・GH Pages'          , useNormalize: '2.0.1 CDN', description: 'Vanilla'             },
     { name: 'remark-editor'              , created: '2020-11-10', url: 'https://remark-editor.vercel.app/'           , service: 'Vercel'                    , useNormalize: '2.0.1 CDN', description: 'Vanilla'             },
-    { name: 'solilog'                    , created: '2020-10-26', url: 'https://neos21-oci.cf/solilog/'              , service: 'OCI IaaS'                  , useNormalize: '2.0.1 CDN', description: 'PHP・Vanilla'        },
     { name: 'affi-code-generator'        , created: '2020-10-15', url: 'https://affi-code-generator.vercel.app/'     , service: 'Vercel'                    , useNormalize: false      , description: 'React'               },
     { name: 'webrtc-video-chat'          , created: '2020-06-28', url: 'https://neos21-webrtc-video-chat.glitch.me/' , service: 'Glitch'                    , useNormalize: false      , description: 'Vanilla・GH Actions' },
     { name: 'practice-vue'               , created: '2019-09-16', url: 'https://practice-vue-neos21.vercel.app/'     , service: 'Vercel'                    , useNormalize: false      , description: 'Vue'                 },
@@ -358,7 +365,7 @@ document.addEventListener('DOMContentLoaded', () => {
   </section>
 </main>
 
-<footer>Copyright &copy; 2016-2023 <a href="https://neos21.net/">Neo</a>, All rights reserved.</footer>
+<footer>Copyright &copy; 2016-2024 <a href="https://neos21.net/">Neo</a>, All rights reserved.</footer>
 
   </body>
 </html>
