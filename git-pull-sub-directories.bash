@@ -4,9 +4,13 @@
 # 
 # Neos21 リポジトリ以外、以下の記述と揃える
 # - `.gitignore`
-# - `index.html` : `const gitHubPagesRepositories`
 # - `sitemap.xml`
 declare -a repositories=(
+  'practice-mustache'
+  'practice-json5'
+  'practice-mdx'
+  'db-api'
+  'unified-page'
   'unfinished-sympathy'
   'our-room'
   'practice-phaser-ts'

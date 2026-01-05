@@ -3,6 +3,11 @@
   <url><loc>https://neos21.github.io/index.html</loc></url>
   <url><loc>https://neos21.github.io/neos21/index.html</loc></url>
   
+  <url><loc>https://neos21.github.io/practice-mustache/index.html</loc></url>
+  <url><loc>https://neos21.github.io/practice-json5/index.html</loc></url>
+  <url><loc>https://neos21.github.io/practice-mdx/index.html</loc></url>
+  <url><loc>https://neos21.github.io/db-api/index.html</loc></url>
+  <url><loc>https://neos21.github.io/unified-page/index.html</loc></url>
   <url><loc>https://neos21.github.io/unfinished-sympathy/index.html</loc></url>
   <url><loc>https://neos21.github.io/our-room/index.html</loc></url>
   <url><loc>https://neos21.github.io/practice-phaser-ts/index.html</loc></url>
@@ -28,6 +33,13 @@
   <url><loc>https://neos21.github.io/neos-timer/index.html</loc></url>
   
   <url><loc>https://neos21.github.io/frontend-sandboxes/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/user-agent-data/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/typescript-react-zod-formify/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/practice-mermaid/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/practice-logic-flow/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/single-html-react-ts/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/unified-editor/index.html</loc></url>
+    <url><loc>https://neos21.github.io/frontend-sandboxes/spa-comparison/index.html</loc></url>
     <url><loc>https://neos21.github.io/frontend-sandboxes/poc-inner-text-selector-2/index.html</loc></url>
     <url><loc>https://neos21.github.io/frontend-sandboxes/cursive-generator/index.html</loc></url>
     <url><loc>https://neos21.github.io/frontend-sandboxes/convert-image-by-canvas/index.html</loc></url>
