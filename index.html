@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Neo's GitHub Pages</title>
     <link rel="icon" href="favicon.ico">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.1.2/neos-normalize.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@neos21/neos-normalize@2.1.4/neos-normalize.min.css">
     
     <!-- Google Search Console -->
     <meta name="google-site-verification" content="ls7kuvIKSqVa_dcixqKvFwl393swvYMkHCkG-xtlCj0">
@@ -19,7 +19,6 @@
 
 :root {
   --nn-colour-base: #323436;
-  --nn-colour-blue: #0070ff;
 }
 
 html {
@@ -53,6 +52,10 @@ h1 a {
 
 #neo u {
   text-decoration: none;
+}
+
+#neo i > a:not(:hover) {
+  color: var(--nn-colour-purple);
 }
 
 #e-mail {
@@ -107,11 +110,12 @@ footer {
     <ul>
       <li><strong><a href="https://neos21.net/">Neo's World</a></strong> : My Personal WebSite / Blog Since 2002</li>
       <li><em><a href="https://neos21.github.io/">Neo's GitHub Pages</a></em> : Here</li>
-      <li><u><a href="https://personal-website-webring.neos21.net/">Personal WebSite WebRing</a></u></li>
+      <li><b><a href="https://personal-website-webring.neos21.net/">Personal WebSite WebRing</a></b></li>
+      <li><u><a href="https://lounge.neos21.net/">The Lounge</a></u></li>
       <li><a href="https://github.com/Neos21">GitHub</a> : Codes
         <ul>
           <li><a href="https://github.com/Neos21?tab=repositories">GitHub Repositories</a></li>
-          <li><b><a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a></b></li>
+          <li><i><a href="https://neos21.github.io/list-repos/?user=Neos21">List Repos</a></i></li>
         </ul>
       </li>
       <li><a href="https://www.npmjs.com/~neos21">npm</a> : Node.js Packages</li>
